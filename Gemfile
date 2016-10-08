@@ -25,6 +25,18 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug', platform: :mri
+  gem 'jasmine-rails'
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'simplecov', :require => false
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'
+  gem 'database_cleaner'
+  gem 'autotest-rails'
+  gem 'factory_girl_rails'
+  gem 'metric_fu'
 end
 
 group :development do
