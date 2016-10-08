@@ -341,7 +341,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   metric_fu
-  pg (~> 0.18)
+  pg (~> 0.19)
   puma (~> 3.0)
   rails (~> 4.2.6)
   rspec-rails
