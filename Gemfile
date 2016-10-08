@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-
+ruby '2.3.0'
 
 gem 'rails', '~> 4.2.6'
-gem 'pg', '~> 0.18'
+gem 'pg', '~> 0.19'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -25,6 +25,18 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug', platform: :mri
+  gem 'jasmine-rails'
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'simplecov', :require => false
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'
+  gem 'database_cleaner'
+  gem 'autotest-rails'
+  gem 'factory_girl_rails'
+  gem 'metric_fu'
 end
 
 group :development do
