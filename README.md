@@ -4,37 +4,18 @@
 [![BuildStatus](https://travis-ci.org/team-datong/Datong.svg?branch=master)](https://travis-ci.org/team-datong/Datong)
 
 Links:
-[Heroku App](datong.herokuapp.com)
-[Pivotal Tracker Project](https://www.pivotaltracker.com/n/projects/1879399)
+
+Heroku App: datong.herokuapp.com
+
+Pivotal Tracker Project: https://www.pivotaltracker.com/n/projects/1879399)
 
 
 
 Project Description:
+
 The Da-tong Society of China Studies is a cultural and academic organization. They want to add functionalities to their current website to make it more useful to their members.
 They are looking for us to build a website for Datong that include functionalities like a member login system, course rating system, resource uploading and downloading, and integration of Google Calendar.
+
 [Current Client Website](https://datong.berkeley.edu/)
 
 
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
