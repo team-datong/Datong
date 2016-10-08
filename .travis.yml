@@ -1,6 +1,9 @@
 language: ruby
 rvm:
- - 2.3.0
+- 2.3.0
+notifications:
+  slack:
+    secure: mh/W5CrVQVNo3mM5oyUadXcFByrI9dXzdSCv8lSxFHFvRyayH0EHg1lCfKJ0Wj0G/dzphx2Eur78bRBkO4wdB8jShNcS29mM6MyxZnGJ0/x8EzvXCXRoFscVZ+/4XEkyP3E9YzJoaI11dVjQqFxxOfBGK8AZzo6++rWDblKFm/PNDnuBHBmNU+2uzYNMmK5nA5Z8R1trARZ0DXc8Y4RrMmVwHPpgbGj0roEsQz2Qx4IN+ZAT2pk6vQ34+MJBAX0XHZRxJ5m6QeoJD/oz1HGrvmeP4lFbpeichx5GPvuVVT+jDT2tHXwNuLyI/L9CT8v/wza/J2b5eJuq09MpZrim+5uyicaA+MErxN+T6t+Ynhrj0vJMZuwJiKVC9wWAd/Puar5iTARxGYo6sfZ/q8Tlcd47hNOvvKlqvd6PFXWrLDu+AlQZZrTVk5R1Sq9X1VtHlzNBvipKFYbA+Vdm/0+wA7xvRLyqsmsLJsYRTgZWAQJG6UTDwTxAjMkgPOuBsaAhr6UK555R6A0/GAUUd68k4QYplpDkZc2+k+dqcOD5Cyq1/4v3UVxeB6t7jhrcTMdFjn87WFq7N5OHm9rcOZKbvfe5j6IqzONZFtZDHOf4PX+32tY5SJvT9VVszupqXl6g8PrV2UD+ld0gKh3yzt6yDciDzqVr7I7OLuc2Fjc8oOE=
 
 script:
  - RAILS_ENV=test bundle exec rake db:migrate --trace
