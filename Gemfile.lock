@@ -341,7 +341,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   metric_fu
-  pg (~> 0.18)
+  pg (~> 0.19)
   puma (~> 3.0)
   rails (~> 4.2.6)
   rspec-rails
@@ -354,5 +354,8 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   web-console
 
+RUBY VERSION
+   ruby 2.3.0p0
+
 BUNDLED WITH
-   1.11.2
+   1.13.2
