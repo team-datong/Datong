@@ -4,7 +4,7 @@
 [![BuildStatus](https://travis-ci.org/team-datong/Datong.svg?branch=master)](https://travis-ci.org/team-datong/Datong)
 
 Links:
-[Heroku App]()
+[Heroku App](datong.herokuapp.com)
 [Pivotal Tracker Project](https://www.pivotaltracker.com/n/projects/1879399)
 
 
