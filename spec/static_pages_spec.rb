@@ -9,3 +9,11 @@ describe '.home' do
     expect(page).to have_content("About Da-Tong")
   end
 end
+
+describe '.people' do
+  it 'page appears' do
+    visit '/people'
+
+    expect(page).to have_content("Core Members")
+  end
+end

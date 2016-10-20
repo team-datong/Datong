@@ -8,8 +8,8 @@ Scenario: visiting the home page
   Then I should see the nav bar
   And I should see About Da-Tong
 
-#Scenario: visiting the people page
-#  Given I am on the people page
-#  Then I should see the nav bar
-#  And I should see Core Members
+Scenario: visiting the people page
+  Given I am on the people page
+  Then I should see the nav bar
+  And I should see Core Members
 
