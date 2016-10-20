@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.0'
 
-gem 'rails', '~> 4.2.6'
+gem 'rails', '~> 4.2.7'
 gem 'pg', '~> 0.19'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
@@ -22,6 +22,7 @@ end
 group :test do
   gem 'rspec-rails'
   gem 'simplecov', :require => false
+  gem 'codeclimate-test-reporter', require: nil
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
   gem 'database_cleaner'

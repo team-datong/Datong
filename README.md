@@ -1,7 +1,8 @@
 # README
-[![CodeClimate](https://codeclimate.com/github/team-datong/Datong/badges/gpa.svg)](https://codeclimate.com/github/team-datong/Datong)
-[![CodeClimate](https://codeclimate.com/github/rails/rails/badges/gpa.svg)](https://codeclimate.com/github/team-datong/Datong)
 [![BuildStatus](https://travis-ci.org/team-datong/Datong.svg?branch=master)](https://travis-ci.org/team-datong/Datong)
+[![CodeClimate](https://codeclimate.com/github/team-datong/Datong/badges/gpa.svg)](https://codeclimate.com/github/team-datong/Datong)
+[![Test Coverage](https://codeclimate.com/github/team-datong/Datong/badges/coverage.svg)](https://codeclimate.com/github/team-datong/Datong/coverage)
+
 
 Links:
 
