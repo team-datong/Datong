@@ -22,7 +22,7 @@ end
 group :test do
   gem 'rspec-rails'
   gem 'simplecov', :require => false
-  gem 'codeclimate-test-reporter', require: nil
+  gem 'codeclimate-test-reporter', "1.0.0.pre.rc2", require: nil
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
   gem 'database_cleaner'

@@ -7,9 +7,10 @@ script:
  - bundle exec rake db:test:prepare
  - bundle exec rspec
  - bundle exec cucumber
+ - bundle exec codeclimate-test-reporter
 after_script:
  - bundle exec rake send_to_codeclimate
 
 addons:
     code_climate:
-        repo_token: ENV['CODECLIMATE_REPO_TOKEN']
+        repo_token: 257ebcdc193edab27b70c5f78f9c324226e1abf02ecda19198c079b3ba82f0f6
