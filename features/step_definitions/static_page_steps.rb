@@ -13,7 +13,7 @@ World(WithinHelpers)
 Then /^I should see (.*)$/ do |text|
   case text
     when 'the nav bar'
-     expect(page).to have_selector('nav')
+      expect(page).to have_selector('nav')
     else
       expect(page).to have_content(text)
 
