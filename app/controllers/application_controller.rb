@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
   def home
     render 'static_pages/home'
   end
+
+  def people
+    render 'static_pages/people'
+  end
 end
