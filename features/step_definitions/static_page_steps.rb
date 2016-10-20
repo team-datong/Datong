@@ -10,12 +10,13 @@ module WithinHelpers
 end
 World(WithinHelpers)
 
-Then /^(?:|I )should see "([^"]*)"$/ do |text|
-  # if page.respond_to? :should
-  #   page.should have_content(text)
-  # else
-  #   assert page.has_content?(text)
-  # end
-  pending
+Then /^I should see (.*)$/ do |text|
+  case text
+    when 'the nav bar'
+     expect(page).to have_selector('nav')
+    else
+      expect(page).to have_content(text)
+
+  end
 end
 
