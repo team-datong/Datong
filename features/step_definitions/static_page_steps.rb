@@ -20,3 +20,7 @@ Then /^I should see (.*)$/ do |text|
   end
 end
 
+When /^(?:|I )follow (.*)$/ do |link|
+  click_link(link)
+end
+
