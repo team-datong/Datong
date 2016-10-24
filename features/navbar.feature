@@ -12,4 +12,5 @@ Scenario: visiting the home page from the people page
   Given I am on the people page
   When I follow Home
   Then I should see About Da-Tong
-  And I should not see "Core Members"
+  And I should not see Core Members
+  
