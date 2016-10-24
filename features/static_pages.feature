@@ -13,17 +13,18 @@ Feature: When I visit a static page, its content should match its counterpart on
     Then I should see the nav bar
     And I should see Core Members
 
-Scenario: visiting the events page
-  Given I am on the home page
-  When I follow Events
-  Then I should see Calendar Stub
-#
-Scenario: visiting the resources page
-  Given I am on the home page
-  When I follow Resources
-  Then I should see Resources Stub
-#
-#Scenario: visiting the contact us page
-#  Given I am on the contact us page
-#  Then I should see Contact Us Stub
-#  And I should see QR Code
+  Scenario: visiting the events page
+    Given I am on the home page
+    When I follow Events
+    Then I should see Calendar Stub
+  
+  Scenario: visiting the resources page
+    Given I am on the home page
+    When I follow Resources
+    Then I should see Resources Stub
+  
+  Scenario: visiting the contact us page
+    Given I am on the contact us page
+    Then I should see Contact Us
+    And I should see Facebook
+    And I should see WeChat Official Account
