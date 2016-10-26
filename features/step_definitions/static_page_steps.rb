@@ -20,3 +20,10 @@ Then /^I should see (.*)$/ do |text|
   end
 end
 
+When /^(?:|I )follow (.*)$/ do |link|
+  click_link(link)
+end
+
+And /^I should not see (.*)$/ do |text|
+    expect(page).not_to have_content(text)
+end
