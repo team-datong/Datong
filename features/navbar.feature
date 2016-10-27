@@ -33,3 +33,7 @@ Feature: When I visit a page with a navbar, the links should be clickable and le
     Then I should not see Sign Up
     And I should not see Sign In
     And I should see Log Out
+
+Scenario: seeing contact us tab
+  Given I am on the people page
+  Then I should see Contact Us

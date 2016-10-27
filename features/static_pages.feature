@@ -13,3 +13,7 @@ Scenario: visiting the people page
   Then I should see the nav bar
   And I should see Core Members
 
+Scenario: visiting the contact us page
+  Given I am on the contact us page
+  Then I should see Contact Us Stub
+  And I should see QR Code
