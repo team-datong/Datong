@@ -14,6 +14,12 @@ Scenario: visiting the home page from the people page
   Then I should see About Da-Tong
   And I should not see Core Members
 
+Scenario: visiting the events page from a different page
+  Given I am on the people page
+  When I follow Events
+  Then I should see Calendar Stub
+  And I should not see Core Members
+
   Scenario: visiting the resources page
     Given I am on the home page
     When I follow Resources
