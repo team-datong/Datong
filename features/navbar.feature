@@ -8,11 +8,16 @@ Feature: When I visit a page with a navbar, the links should be clickable and le
     When I follow People
     Then I should see Core Members
 
-  Scenario: visiting the home page from the people page
-    Given I am on the people page
-    When I follow Home
-    Then I should see About Da-Tong
-    And I should not see Core Members
+Scenario: visiting the home page from the people page
+  Given I am on the people page
+  When I follow Home
+  Then I should see About Da-Tong
+  And I should not see Core Members
+
+  Scenario: visiting the resources page
+    Given I am on the home page
+    When I follow Resources
+    Then I should see Resources
 
   Scenario: Signing up
     Given I am on the home page

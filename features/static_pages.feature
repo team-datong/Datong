@@ -13,6 +13,11 @@ Scenario: visiting the people page
   Then I should see the nav bar
   And I should see Core Members
 
+Scenario: visiting the resources page
+  Given I am on the home page
+  When I follow Resources
+  Then I should see Resoures Stub
+
 Scenario: visiting the contact us page
   Given I am on the contact us page
   Then I should see Contact Us Stub
