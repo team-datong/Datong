@@ -13,6 +13,11 @@ Scenario: visiting the people page
   Then I should see the nav bar
   And I should see Core Members
 
+Scenario: visiting the events page
+  Given I am on the home page
+  When I follow Events
+  Then I should see Calendar Stub
+
 Scenario: visiting the resources page
   Given I am on the home page
   When I follow Resources
