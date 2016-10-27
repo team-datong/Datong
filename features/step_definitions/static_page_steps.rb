@@ -26,7 +26,7 @@ Given /^I have an account for (.*@.*) with password (.*)$/ do |email, password|
 end
 
 Given /^I do not have an account$/ do
-  pass
+  pending
 end
 
 Given /^I am not logged in$/ do

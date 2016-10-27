@@ -252,3 +252,7 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+
+Given /^I have an account for (.*)$/ do |account|
+  pending
+end
