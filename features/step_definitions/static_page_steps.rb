@@ -34,8 +34,14 @@ Given /^I am not logged in$/ do
 end
 
 Given /^I am logged in$/ do
-  pending
-  #log them into the default account: datongtest@datong.berkeley.edu, hunter2
+  email = 'datongtest@datong.berkeley.edu'
+  password = 'hunter2'
+  User.new(:email => email, :password => password, :password_confirmation => password).save!
+
+  visit '/users/sign_in'
+  fill_in "user_email", :with => email
+  fill_in "user_password", :with => password
+  click_button "Log In"
 end
 
 

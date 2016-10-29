@@ -30,6 +30,7 @@ group :test do
   gem 'autotest-rails'
   gem 'factory_girl_rails'
   gem 'metric_fu'
+  gem 'byebug'
 end
 
 group :development do

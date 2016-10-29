@@ -5,63 +5,70 @@ Feature: User Authentication with Devise
   already exists
 
   Scenario: Seeing Sign Up/Sign In buttons
-    Given I am not logged in
+    Given I am on the home page
     Then I should see Sign Up
     And I should see Sign In
     And I should not see Log Out
 
   Scenario: Seeing a Log Out button
     Given I am logged in
-    Then I should see Log out
+    Then I should see Log Out
     And I should not see Sign Up
     And I should not see Sign In
 
   Scenario: Signing up for an account
-    Given I do not have an account
-    And I follow Sign Up
+    Given I am on the home page
+    When I follow Sign Up
     Then I should see Sign up for Datong
-    When I fill in "email" with "datongtest@datong.berkeley.edu"
-    And I fill in "password" with "hunter2"
-    And I press "Submit"
+    When I fill in "user_email" with "datongtest@datong.berkeley.edu"
+    And I fill in "user_password" with "hunter2"
+    And I fill in "user_password_confirmation" with "hunter2"
+    And I press "Sign Up"
     Then I should see Welcome! You have signed up successfully.
 
   Scenario: Signing up with existing email
     Given I have an account for datongtest@datong.berkeley.edu
+    And I am on the home page
     And I follow Sign Up
-    When I fill in "email" with "datongtest@datong.berkeley.edu"
-    And I fill in "password" with "hunter2"
-    And I press "Submit"
+    When I fill in "user_email" with "datongtest@datong.berkeley.edu"
+    And I fill in "user_password" with "hunter2"
+    And I fill in "user_password_confirmation" with "hunter2"
+    And I press "Sign Up"
     Then I should see Email has already been taken
 
   Scenario: Signing in to an existing account
     Given I have an account for datongtest@datong.berkeley.edu
+    And I am on the home page
     And I follow Sign In
-    When I fill in "email" with "datongtest@datong.berkeley.edu"
-    And I fill in "password" with "hunter2"
-   And I press "Submit"
+    When I fill in "user_email" with "datongtest@datong.berkeley.edu"
+    And I fill in "user_password" with "hunter2"
+   And I press "Log In"
     Then I should see Signed in successfully
 
 
   Scenario: Signing in with an incorrect password
     Given I have an account for datongtest@datong.berkeley.edu
-    And I follow Sign In
-    When I fill in "email" with "datongtest@datong.berkeley.edu"
-    And I fill in "password" with "hunter2"
-    And I press "Submit"
+    And I am on the home page
+    When I follow Sign In
+    And I fill in "user_email" with "datongtest@datong.berkeley.edu"
+    And I fill in "user_password" with "hunter2wrong"
+    And I press "Log In"
     Then I should see Invalid Email or password
 
   Scenario: Signing in with a nonexisting email
-    Given I follow Sign In
-    When I fill in "email" with "datongtest@datong.berkeley.edu"
-    And I fill in "password" with "hunter2"
-    And I press "Submit"
+    Given I am on the home page
+    And I follow Sign In
+    When I fill in "user_email" with "datongtest@datong.berkeley.edu"
+    And I fill in "user_password" with "hunter2"
+    And I press "Log In"
     Then I should see Invalid Email or password
 
   Scenario: Signing out
     Given I am logged in
-    And I follow Log out
+    And I follow Log Out
     Then I should see Sign Up
     And I should see Sign In
+    And I should see Signed out successfully.
 
 # Scenario: Signing up with an invalid email
 #   Given I am not logged in
