@@ -2,9 +2,17 @@
   <div class="nav-wrapper">
     <a href="" class="brand-logo">Datong</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="/">Home</a></li>
-      <li><a href="/people">People</a></li>
+      <li><%= link_to 'Home', root_path %></li>
+      <li><%= link_to 'People', people_path %></li>
+      <li><%= link_to 'Events', events_path %></li>
       <li><a href="/">Contact Us</a></li>
-    </ul>
+      <% if user_signed_in? %>
+          Logged in as <strong><%= current_user.email %></strong>.
+          <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+          <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <li><%= link_to "Sign In", new_user_session_path %></li>
+      <% end %>   </ul>
   </div>
 </nav>
