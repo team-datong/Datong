@@ -18,4 +18,18 @@
 
 $( document ).ready(function(){
     $(".button-collapse").sideNav();
-})
+});
+
+// Some jquery script to change a class when resizing to smaller than 992 or larger than 992
+
+$( window ).on('load resize', function() {
+    var width = $( window ).width();
+    if ( width > 992 ) {
+        $( 'ul#mobile-menu' ).removeClass('side-nav');
+        $( 'ul#mobile-menu' ).addClass('right hide-on-med-and-down');
+        $( 'ul#mobile-menu' ).css('transform', '');
+    } else {
+        $( 'ul#mobile-menu' ).addClass('side-nav');
+        $( 'ul#mobile-menu' ).removeClass('right hide-on-med-and-down');
+    }
+});
