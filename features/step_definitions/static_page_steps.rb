@@ -20,27 +20,6 @@ Then /^I should see (.*)$/ do |text|
   end
 end
 
-Given /^I have an account for (.*@.*) with password (.*)$/ do |email, password|
-  pending
-  #add entry for user: email, password
-end
-
-Given /^I do not have an account$/ do
-  pending
-end
-
-Given /^I am not logged in$/ do
-  pending
-end
-
-Given /^I am logged in$/ do
-  pending
-  #log them into the default account: datongtest@datong.berkeley.edu, hunter2
-end
-
-
-
-
 When /^(?:|I )follow (.*)$/ do |link|
   click_link(link)
 end
