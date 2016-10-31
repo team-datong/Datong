@@ -10,8 +10,4 @@ class ApplicationController < ActionController::Base
   def people
     render 'static_pages/people'
   end
-
-  def events
-    render 'static_pages/events'
-  end
 end
