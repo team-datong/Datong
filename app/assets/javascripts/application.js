@@ -13,5 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require tether
-//= require bootstrap-sprockets
+//= require materialize
 //= require_tree .
+
+$( document ).ready(function(){
+    $(".button-collapse").sideNav();
+})
