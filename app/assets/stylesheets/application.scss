@@ -23,3 +23,7 @@ $secondary-color: $bison-hide !default;
 .nav-wrapper {
   padding: 0em 1em 0em 1em;
 }
+
+.nav-wrapper .navbar-non-link {
+  padding: 0 15px;
+}
