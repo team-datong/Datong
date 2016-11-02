@@ -1,13 +1,27 @@
 <nav>
   <div class="nav-wrapper">
+<<<<<<< HEAD
+    <a href="" class="brand-logo">Datong</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+=======
     <a href="#!" class="brand-logo">Datong</a>
     <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul id="mobile-menu" class="side-nav">
+>>>>>>> Iter2Staging
       <li><%= link_to 'Home', root_path %></li>
       <li><%= link_to 'People', people_path %></li>
       <li><%= link_to 'Events', events_path %></li>
       <li><a href="/">Contact Us</a></li>
       <% if user_signed_in? %>
+<<<<<<< HEAD
+          Logged in as <strong><%= current_user.email %></strong>.
+          <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+          <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <li><%= link_to "Sign In", new_user_session_path %></li>
+      <% end %>   </ul>
+=======
           <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
           <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
           <li><div class="navbar-non-link">Logged in as <strong><%= current_user.email %></strong>.</div></li>
@@ -16,5 +30,6 @@
           <li><%= link_to "Sign In", new_user_session_path %></li>
       <% end %>
     </ul>
+>>>>>>> Iter2Staging
   </div>
 </nav>
