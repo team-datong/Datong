@@ -18,10 +18,10 @@ Scenario: visiting the events page
   When I follow Events
   Then I should see Calendar Stub
 #
-#Scenario: visiting the resources page
-#  Given I am on the home page
-#  When I follow Resources
-#  Then I should see Resoures Stub
+Scenario: visiting the resources page
+  Given I am on the home page
+  When I follow Resources
+  Then I should see Resources Stub
 #
 #Scenario: visiting the contact us page
 #  Given I am on the contact us page
