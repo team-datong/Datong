@@ -8,6 +8,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'bootstrap', '~> 4.0.0.alpha4'
+gem 'devise'
 
 gem 'jquery-rails'
 # Can use ActiveModelSerializer instead
@@ -29,6 +30,7 @@ group :test do
   gem 'autotest-rails'
   gem 'factory_girl_rails'
   gem 'metric_fu'
+  gem 'byebug'
 end
 
 group :development do
@@ -46,3 +48,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# MaterializeCSS: Style choice
+gem 'materialize-sass'
