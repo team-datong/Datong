@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
   def events
     render 'static_pages/events'
   end
+  
+  def contact_us
+    render 'static_pages/contact_us'
+  end
 end

@@ -12,4 +12,18 @@
  *
  */
 
-@import "bootstrap";
+@import "materialize/components/color";
+$beaver: #9A846D;
+$bison-hide: #B8A692;
+$primary-color: $beaver !default;
+$secondary-color: $bison-hide !default;
+@import 'materialize';
+@import "materialize/extras/nouislider";
+
+.nav-wrapper {
+  padding: 0em 1em 0em 1em;
+}
+
+.nav-wrapper .navbar-non-link {
+  padding: 0 15px;
+}

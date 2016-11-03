@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root :to => 'application#home'
   get '/people' => 'application#people'
   get '/events' => 'application#events'
+  get '/contact_us' => 'application#contact_us'
+  resources :resources, only: :index
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

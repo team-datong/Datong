@@ -20,10 +20,10 @@ Scenario: visiting the events page from a different page
   Then I should see Calendar Stub
   And I should not see Core Members
 #
-#  Scenario: visiting the resources page
-#    Given I am on the home page
-#    When I follow Resources
-#    Then I should see Resources
+  Scenario: visiting the resources page
+    Given I am on the home page
+    When I follow Resources
+    Then I should see Resources
 
   Scenario: Signing up
     Given I am on the home page
