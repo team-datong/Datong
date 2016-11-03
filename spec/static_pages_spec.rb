@@ -17,3 +17,21 @@ describe '.people' do
     expect(page).to have_content("Core Members")
   end
 end
+
+describe '.events' do
+  it 'stub appears' do
+    visit '/events'
+
+    expect(page).to have_content("Calendar Stub")
+  end
+end
+
+describe '.contact_us' do
+  it 'page appears' do
+    visit '/contact_us'
+
+    expect(page).to have_content("Contact Us")
+    expect(page).to have_content("Facebook Page:")
+    expect(page).to have_content("WeChat Official Account")
+  end
+end
