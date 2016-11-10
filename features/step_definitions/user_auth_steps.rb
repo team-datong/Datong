@@ -15,7 +15,6 @@ Given /^I have an account for (.*)$/ do |account|
   User.create!(email: account, password: 'hunter2')
 end
 
-<<<<<<< HEAD
 Then /^I should be a (.*)$/ do |level|
   pending 
 end
