@@ -27,6 +27,13 @@ Feature: When I visit the resources page as a core member, I would like to updat
     When I press submit
     And I should see Resource2
     
+  Scenario: deleting resource as core member correctly
+    Given I am on the resources page
+    And I have core access
+    Then I should see the delete button 
+    When I press delete
+    And I should not see TestResourceName
+    
   Scenario: uploading resource as core member incorrectly without title
     Given I am on the resources page
     And I have core access
@@ -36,7 +43,7 @@ Feature: When I visit the resources page as a core member, I would like to updat
     When I press submit
     Then I should see Cannot upload resource without title
   
-  Scenario: downloading resource as logged in member incorrectly without title
+  Scenario: downloading resource as logged in member
     Given I am on the resources page
     And I have member access
     Then I should not see the add button
