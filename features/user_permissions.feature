@@ -26,7 +26,7 @@ Scenario: Non-core members should not have permission to add/edit resources
   Given I am not a Core Member
   And I am on the Resources page
   Then I should not see the Add Resource button
-  And I should not see the Edit button next to each resource
+  And I should not see the Edit button 
 
 Scenario: Events Manager has permission to add events
   Given I am a Events Manager
@@ -42,7 +42,8 @@ Scenario: Accounts Manager has permission to change other's accounts permissions
   Given I am a Accounts Manager
   And I am on the home page
   Then I should see Manage Accounts in the navbar 
-  And I should see a list of accounts
+  When I follow Manage Accounts
+  Then I should be on the Manage Accounts page 
   
 Scenario: Nobody but the Accounts Manager should be able to see a list of users
   Given I am not a Accounts Manager
