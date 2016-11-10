@@ -42,7 +42,6 @@ Scenario: Accounts Manager has permission to change other's accounts permissions
   Given I am a Accounts Manager
   And I am on the home page
   Then I should see Manage Accounts in the navbar 
-<<<<<<< HEAD
   When I follow Manage Accounts
   Then I should be on the Manage Accounts page 
   
