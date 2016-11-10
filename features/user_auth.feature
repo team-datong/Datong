@@ -78,8 +78,6 @@ Feature: User Authentication with Devise
     And I press "Sign Up"
     Then I should see Welcome! You have signed up successfully.
     And I should be a Berkeley student
-    And I should not be a Core Member
-    And I should not be Admin
 
   Scenario: Creating an account with a non-Berkeley email
     Given I am on the home page
@@ -88,6 +86,4 @@ Feature: User Authentication with Devise
     And I fill in "user_password" with "hunter2"
     And I press "Sign Up"
     Then I should see Welcome! You have signed up successfully.
-    And I should not be a Berkeley student 
-    And I should not be a Core Member
-    And I should not be Admin
+    And I should be a non-Berkeley student user
