@@ -78,6 +78,7 @@ Feature: User Authentication with Devise
     And I press "Sign Up"
     Then I should see Welcome! You have signed up successfully.
     And I should be a Berkeley student
+    And I should not be a Core Member
     And I should not be Admin
 
   Scenario: Creating an account with a non-Berkeley email
@@ -88,8 +89,5 @@ Feature: User Authentication with Devise
     And I press "Sign Up"
     Then I should see Welcome! You have signed up successfully.
     And I should not be a Berkeley student 
+    And I should not be a Core Member
     And I should not be Admin
-
- Scenario: Upgrading an account to Admin
-    Given I am logged in as Admin
-    And I visit 
