@@ -44,7 +44,9 @@ Given /^I am logged in$/ do
   click_button "Log In"
 end
 
-
+Given /^I am an admin$/ do
+  pending
+end
 
 
 When /^(?:|I )follow (.*)$/ do |link|
