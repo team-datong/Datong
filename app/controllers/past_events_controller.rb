@@ -1,6 +1,6 @@
 class PastEventsController < ApplicationController
   def index
-
+    # should show something
   end
 
   def new

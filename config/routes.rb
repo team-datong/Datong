@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get '/events' => 'application#events'
   get '/contact_us' => 'application#contact_us'
   resources :resources, only: :index
-  
+  resources :past_events
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
