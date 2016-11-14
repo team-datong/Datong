@@ -1,11 +1,9 @@
 <h2>Add Event</h2>
 
-<%= form_for @past_event, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+<%= form_for @past_event do |f| %>
   Title: <%= f.text_field :title %>
   Description: <%= f.text_area :description, size: "60x12" %>
-  Date: <%= f.date_select :date, :order => [:day, :month, :year] %>
-  Time: <%= f.time_select :time %>
-  
+  Date and Time: <%= f.datetime_local_field :date_and_time %>
   <%= f.submit "Create" %>
 
 <% end %>
