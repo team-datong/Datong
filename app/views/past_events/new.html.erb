@@ -1,0 +1,32 @@
+<h2>Add Event</h2>
+
+<%= form_for(resource, as: resource_name, url: past_events_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+  
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.title_field :title, autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= select_date Date.today %>
+    <%= f.label :date %><br />
+    <%= f.date_field :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :time %><br />
+    <%= f.date_field :time
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.description_field :description %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Add Event" %>
+  </div>
+  
+<% end %>
+

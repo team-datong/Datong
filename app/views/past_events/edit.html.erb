@@ -1,0 +1,31 @@
+<h2>Edit Event</h2>
+
+<%= form_for(resource, as: resource_name, url: past_events_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+  
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.title_field :title, autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_field :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :time %><br />
+    <%= f.date_field :time
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.description_field :description, autofocus: true %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Save Edit" %>
+  </div>  
+  
+  
+  <p>Delete Event <%= button_to "Delete Event", past_events_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
