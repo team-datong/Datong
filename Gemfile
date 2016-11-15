@@ -51,3 +51,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # MaterializeCSS: Style choice
 gem 'materialize-sass'
+
+#FullCalendar for the calendar view on the events page
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'

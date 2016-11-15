@@ -14,11 +14,18 @@
 //= require jquery_ujs
 //= require tether
 //= require materialize
-//= require_tree .
+//= require_tree
+//= require moment 
+//= require fullcalendar
+
 
 $( document ).ready(function(){
     $(".button-collapse").sideNav();
 });
+
+// $( document ).ready(function(){
+//     $('#calendar').fullCalendar({});
+// });
 
 // Some jquery script to change a class when resizing to smaller than 992 or larger than 992
 
