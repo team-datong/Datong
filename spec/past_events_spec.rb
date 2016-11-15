@@ -3,7 +3,7 @@ require 'rails_helper'
 
 describe PastEventsController, type: 'controller' do
   before :each do
-    @past_events = [double('past_event1')]
+    @past_events = []
   end
 
   describe '.index' do
@@ -14,7 +14,7 @@ describe PastEventsController, type: 'controller' do
     it 'properly renders' do
       get :index
       expect(response).to render_template("index")
-      expect(page).to have_content("Past Events")
+      expect(page).to have_content("Events")
     end
   end
 
@@ -23,12 +23,11 @@ describe PastEventsController, type: 'controller' do
       get :new
     end
     it 'assigns a new PastEvent to @past_event' do
-      past_event = PastEvent.create # not sure about this line
-      expect(assigns(:past_event)).to eq(past_event)
+      expect(assigns(:past_event)).should_not be_nil
     end
     it 'properly renders' do
       response.should render_template 'new'
-      expect(page).to have_content("New past event")
+      expect(page).to have_content("Add Past Event")
       expect(page).to have_selector("label#title")
       expect(page).to have_selector("label#description")
       expect(page).to have_selector("label#datetime")
