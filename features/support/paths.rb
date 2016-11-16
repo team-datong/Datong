@@ -19,6 +19,8 @@ module NavigationHelpers
       '/people'
     when /^the past events page$/
       '/past_events'
+    when /^the resources page$/
+      '/resources'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

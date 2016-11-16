@@ -1,3 +1,29 @@
-<div>
-  <h2>Resources Stub</h2>
-</div>
+
+<br />
+
+<%= link_to "Upload Resource", new_resource_path, class: "btn btn-primary", id:"upload" %>
+<br />
+<br />
+
+<table class = "table table-bordered table-striped">
+   <thead>.
+      <tr>
+         <th>Title</th>
+         <th>Download Link</th>
+         <th> </th>
+      </tr>
+   </thead>
+   
+   <tbody>
+      <% @resources.each do |resource| %>
+         
+         <tr>
+            <td><%= resource.title %></td>
+            <td><%= link_to "Download Resource", resource.attachment_url %></td>
+            <td><%= button_to "Delete",  resource, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{resource.title}?" %></td>
+         </tr>
+         
+      <% end %>
+   </tbody>
+   
+</table>
