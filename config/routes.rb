@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :events
   devise_for :users
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   root :to => 'application#home'

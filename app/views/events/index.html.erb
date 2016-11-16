@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Upcoming Events</h1>
+
+<!--display calendar-->
+<script>
+  $( document ).ready(function()
+    {$('#calendar').fullCalendar({
+    events: '/events.json',
+    header: {
+      left: 'today prev,next',
+      center: 'title',
+      right: 'month,agendaWeek,agendaDay,list'
+    },
+    defaultView: 'agendaWeek',
+    selectable: true,
+    selectHelper: true,
+    eventLimit: true,
+    editable: true
+    });
+  });
+  
+</script>
+<div id="calendar"></div>
+<%= link_to 'New Event', new_event_path %>
