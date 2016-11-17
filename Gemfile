@@ -56,3 +56,6 @@ gem 'materialize-sass'
 # Carrierwave for resource uploading
 gem 'carrierwave', '~> 0.9'
 gem 'bootstrap-sass', '~> 2.3.2'
+#FullCalendar for the calendar view on the events page
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
