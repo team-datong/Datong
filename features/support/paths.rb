@@ -17,6 +17,8 @@ module NavigationHelpers
       '/'
     when /^the people page$/
       '/people'
+    when /^the about us page$/
+      '/about_us'
     when /^the past events page$/
       '/past_events'
     when /^the resources page$/

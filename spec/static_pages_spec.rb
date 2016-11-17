@@ -5,7 +5,17 @@ describe '.home' do
 
   it 'page properly renders' do
     visit ''
-    expect(page).to have_content("About Da-Tong")
+
+    expect(page).to have_content("jumbotron")
+  end
+end
+
+describe '.about_us' do
+
+  it 'page properly renders' do
+    visit '/about_us'
+
+    expect(page).to have_content('About Us')
   end
 end
 
