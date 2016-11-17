@@ -10,15 +10,15 @@ Feature: When I visit a page with a navbar, the links should be clickable and le
 
   Scenario: visiting the home page from the people page
     Given I am on the people page
-    When I follow Home
-    Then I should see About Da-Tong
+    When I follow Datong
+    Then I should see jumbotron
     And I should not see Core Members
 
-Scenario: visiting the events page from a different page
-  Given I am on the people page
-  When I follow Events
-  Then I should see Calendar Stub
-  And I should not see Core Members
+  Scenario: visiting the events page from a different page
+    Given I am on the people page
+    When I follow Events
+    Then I should see Calendar Stub
+    And I should not see Core Members
 #
   Scenario: visiting the resources page
     Given I am on the home page
@@ -45,7 +45,7 @@ Scenario: visiting the events page from a different page
     And I should not see Sign In
     And I should see Log Out
 
-Scenario: seeing contact tab
-  Given I am on the people page
-  Then I should see Contact
-  And I should not see Contact Us
+  Scenario: seeing contact tab
+    Given I am on the people page
+    Then I should see Contact
+    And I should not see Contact Us

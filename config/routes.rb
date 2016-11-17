@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
-  root :to => 'application#home'
-  get '/people' => 'application#people'
-  get '/events' => 'application#events'
-  get '/contact_us' => 'application#contact_us'
+  root :to          => 'pages#home'
+  get '/about_us'   => 'pages#about_us'
+  get '/people'     => 'pages#people'
+  get '/events'     => 'pages#events'
+  get '/contact_us' => 'pages#contact_us'
   resources :resources, only: :index
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
