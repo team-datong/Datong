@@ -20,8 +20,9 @@ Feature: When I visit a static page, its content should match its counterpart on
   
   Scenario: visiting the resources page
     Given I am on the home page
+    And I am logged in
     When I follow Resources
-    Then I should see Resources Stub
+    Then I should see Upload Resource
 
   Scenario: visiting the contact us page
     Given I am on the contact us page
