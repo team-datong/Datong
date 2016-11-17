@@ -22,7 +22,6 @@ end
 describe '.people' do
   it 'page appears' do
     visit '/people'
-
     expect(page).to have_content("Core Members")
   end
 end

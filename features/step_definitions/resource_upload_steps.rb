@@ -11,13 +11,11 @@ end
 World(WithinHelpers)
 
 And /^(?:|I )upload the "(.*)"$/ do |filename|
-    pending
+    test_file = fixture_file_upload('features/testfiles/test_file.txt', 'text')
+    post "/resources", :title => 'test_file_name', :attachment => test_file
 end
 
 When /^(?:|I )have "(.*)" access$/ do |auth|
     pending
 end
 
-Then /^(?:|I )should see the "(.*)" button$/ do |button|
-    pending
-end
