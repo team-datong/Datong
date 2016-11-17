@@ -20,7 +20,7 @@ module NavigationHelpers
     when /^the about us page$/
       '/about_us'
     when /^the past events page$/
-      pending
+      '/past_events'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

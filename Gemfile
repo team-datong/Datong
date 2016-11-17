@@ -31,6 +31,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'metric_fu'
   gem 'byebug'
+  gem 'faker'
 end
 
 group :development do

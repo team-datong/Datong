@@ -1,0 +1,11 @@
+<h2>Edit Event</h2>
+<%= form_for @past_event do |f| %>
+    Title: <%= f.text_area :title, value: @past_event.title %>
+    Description: <%= f.text_area :description, value: @past_event.description, size: "60x12" %>
+    Date and Time: <%= f.text_area :date_and_time, value: @past_event.date_and_time, placeholder: "DD/MM/YYYY HH:MM AM/PM" %>
+    <div style="display:inline-flex;">
+      <%= f.submit "Update Event", class: "btn waves-effect waves-light"%>
+      <%= link_to "Cancel", past_events_path, class: "btn waves-effect waves-light", style:"margin-left:1em;" %>
+      <%= link_to "Delete", @past_event, method: :delete, class: "btn waves-effect waves-light danger", style:"margin-left:1em;"%>
+    </div>
+<% end %>
