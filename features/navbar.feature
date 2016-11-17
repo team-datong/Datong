@@ -20,8 +20,13 @@ Scenario: visiting the events page from a different page
   Then I should see Upcoming Events
   And I should not see Core Members
 #
-  Scenario: visiting the resources page
+  Scenario: visiting the resources page when not logged in
     Given I am on the home page
+    Then I should not see Resources
+    
+  Scenario: visiting the resources page when logged in
+    Given I am on the home page
+    And I am logged in
     When I follow Resources
     Then I should see Resources
 
