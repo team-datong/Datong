@@ -8,24 +8,6 @@ class PastEventsController < ApplicationController
   end
 
   def create
-<<<<<<< HEAD
-    @past_event = PastEvent.create!(past_event_params)
-    flash[:notice] = "Event created"
-
-    redirect_to past_events_path
-  end
-
-  def edit
-
-  end
-
-  def update
-
-  end
-
-  def destroy
-
-=======
     past_event = PastEvent.new(past_event_params)
     if past_event.save
       flash[:success] = "Event created"
@@ -56,7 +38,6 @@ class PastEventsController < ApplicationController
     @past_event.delete
     flash[:notice] = "Event deleted"
     redirect_to past_events_path
->>>>>>> Iter3Staging
   end
 
   private
