@@ -21,11 +21,8 @@ module NavigationHelpers
       '/about_us'
     when /^the past events page$/
       '/past_events'
-<<<<<<< HEAD
     when /^the resources page$/
       '/resources'
-=======
->>>>>>> Iter3Staging
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
