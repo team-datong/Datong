@@ -17,6 +17,10 @@ $beaver: #9A846D;
 $bison-hide: #B8A692;
 $primary-color: $beaver !default;
 $secondary-color: $bison-hide !default;
+$error-color: #EED6D6;
+$danger-color: #E83B3F;
+$warning-color: #fff59d;
+$success-color: #D8EECF;
 @import 'materialize';
 @import "materialize/extras/nouislider";
 
@@ -27,3 +31,32 @@ $secondary-color: $bison-hide !default;
 .nav-wrapper .navbar-non-link {
   padding: 0 15px;
 }
+
+.alert {
+  border-radius: 3px;
+  padding: 1em;
+  margin: 1em 0em 1em 0em;
+}
+
+.alert-success {
+  background-color: $success-color;
+  border-color: darken($success-color, 20%);
+  color: darken($success-color, 50%);
+}
+
+.alert-notice {
+  background-color: $warning-color;
+  border-color: darken($warning-color, 20%);
+  color: darken($warning-color, 50%);
+}
+
+.alert-error {
+  background-color: $error-color;
+  border-color: darken($error-color, 20%);
+  color: darken($error-color, 50%);
+}
+
+.danger {
+  background-color: $danger-color;
+}
+
