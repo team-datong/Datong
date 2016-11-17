@@ -1,3 +1,4 @@
+
 require 'uri'
 require 'cgi'
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
@@ -54,5 +55,5 @@ When /^(?:|I )follow (.*)$/ do |link|
 end
 
 And /^I should not see (.*)$/ do |text|
-    expect(page).not_to have_content(text)
+  expect(page).not_to have_content(text)
 end

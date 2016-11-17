@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  get 'resources/index'
-
-  get 'resources/new'
-
-  get 'resources/create'
-
-  get 'resources/destroy'
 
   devise_for :users
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
@@ -13,10 +6,10 @@ Rails.application.routes.draw do
   root :to          => 'pages#home'
   get '/about_us'   => 'pages#about_us'
   get '/people'     => 'pages#people'
-  get '/events'     => 'pages#events'
   get '/contact_us' => 'pages#contact_us'
   resources :resources, only: [:index, :new, :create, :destroy]
   resources :past_events
+  resources :events
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

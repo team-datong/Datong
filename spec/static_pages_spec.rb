@@ -30,7 +30,7 @@ describe '.events' do
   it 'stub appears' do
     visit '/events'
 
-    expect(page).to have_content("Calendar Stub")
+    expect(page).to have_content("Upcoming Events")
   end
 end
 

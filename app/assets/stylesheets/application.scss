@@ -10,7 +10,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require fullcalendar
  */
+
+
 
 @import "materialize/components/color";
 $beaver: #9A846D;
@@ -23,6 +26,7 @@ $warning-color: #fff59d;
 $success-color: #D8EECF;
 @import 'materialize';
 @import "materialize/extras/nouislider";
+
 
 .nav-wrapper {
   padding: 0em 1em 0em 1em;
