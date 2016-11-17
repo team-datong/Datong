@@ -45,6 +45,7 @@ Scenario: visiting the events page from a different page
     And I should not see Sign In
     And I should see Log Out
 
-#Scenario: seeing contact us tab
-#  Given I am on the people page
-#  Then I should see Contact Us
+Scenario: seeing contact tab
+  Given I am on the people page
+  Then I should see Contact
+  And I should not see Contact Us
