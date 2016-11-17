@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-<h2>Add Past Event</h2>
-
-<%= form_for @past_event do |f| %>
-  Title: <%= f.text_field :title %>
-  Description: <%= f.text_area :description, size: "60x12" %>
-  Date and Time: <%= f.datetime_local_field :date_and_time %>
-  <%= f.submit "Create" %>
-
-<% end %>
-
-=======
 <h2>New Event</h2>
 <%= form_for @past_event do |f| %>
   Title: <%= f.text_area :title %>
@@ -20,5 +8,3 @@
       <%= link_to "Cancel", past_events_path, class: "btn waves-effect waves-light", style:"margin-left:1em;" %></div>
 <% end %>
 
-
->>>>>>> Iter3Staging
