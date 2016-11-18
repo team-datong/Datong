@@ -75,6 +75,7 @@ Feature: User Authentication with Devise
     And I follow Sign Up
     When I fill in "user_email" with "datongtest@datong.berkeley.edu"
     And I fill in "user_password" with "hunter2"
+    And I fill in "user_password_confirmation" with "hunter2"
     And I press "Sign Up"
     Then I should see Welcome! You have signed up successfully.
     And I should be a Berkeley student
@@ -84,6 +85,7 @@ Feature: User Authentication with Devise
     And I follow Sign Up
     When I fill in "user_email" with "datongtest@sdfsdf.com"
     And I fill in "user_password" with "hunter2"
+    And I fill in "user_password_confirmation" with "hunter2"
     And I press "Sign Up"
     Then I should see Welcome! You have signed up successfully.
     And I should be a non-Berkeley student user
