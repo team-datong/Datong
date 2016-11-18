@@ -6,14 +6,22 @@ describe '.home' do
   it 'page properly renders' do
     visit ''
 
-    expect(page).to have_content("About Da-Tong")
+    expect(page).to have_content("jumbotron")
+  end
+end
+
+describe '.about_us' do
+
+  it 'page properly renders' do
+    visit '/about_us'
+
+    expect(page).to have_content('About Us')
   end
 end
 
 describe '.people' do
   it 'page appears' do
     visit '/people'
-
     expect(page).to have_content("Core Members")
   end
 end
@@ -22,7 +30,7 @@ describe '.events' do
   it 'stub appears' do
     visit '/events'
 
-    expect(page).to have_content("Calendar Stub")
+    expect(page).to have_content("Upcoming Events")
   end
 end
 

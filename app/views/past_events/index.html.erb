@@ -1,0 +1,31 @@
+<h2>Past Events</h2>
+<%= link_to "Add Past Event", new_past_event_path, class: "waves-effect waves-light btn" %>
+<table id="past_events">
+  <thead>
+  <tr>
+    <th>
+      Event title
+    </th>
+    <th>
+      Event description
+    </th>
+    <th>
+      Date and time
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <% if @past_events.empty? %>
+      <tr><td><p>It looks like there hasn't been any events yet!</p></td></tr>
+  <% else %>
+      <% @past_events.each do |past_event|%>
+          <tr>
+            <td><%= past_event.title %></td>
+            <td><%= past_event.description %></td>
+            <td><%= past_event.date_and_time %></td>
+            <td><%= link_to 'Edit', edit_past_event_url(past_event.id) %></td>
+          </tr>
+      <% end %>
+  <% end %>
+  </tbody>
+</table>
