@@ -30,7 +30,7 @@ group :test do
   gem 'autotest-rails'
   gem 'factory_girl_rails'
   gem 'metric_fu'
-  gem 'byebug'
+  gem 'faker'
 end
 
 group :development do
@@ -51,3 +51,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # MaterializeCSS: Style choice
 gem 'materialize-sass'
+
+# Carrierwave for resource uploading
+gem 'carrierwave', '~> 0.9'
+gem 'bootstrap-sass', '~> 2.3.2'
+#FullCalendar for the calendar view on the events page
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'

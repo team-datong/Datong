@@ -3,10 +3,10 @@ Feature: When I visit a static page, its content should match its counterpart on
   Whenever I visit a static page
   I should be able to see the same as I did in datong.berkeley.edu
 
-  Scenario: visiting the home page
+  Scenario: visiting the about us page
     Given I am on the home page
     Then I should see the nav bar
-    And I should see About Da-Tong
+    And I should see jumbotron
 
   Scenario: visiting the people page
     Given I am on the people page
@@ -16,13 +16,14 @@ Feature: When I visit a static page, its content should match its counterpart on
   Scenario: visiting the events page
     Given I am on the home page
     When I follow Events
-    Then I should see Calendar Stub
+    Then I should see Upcoming Events
   
   Scenario: visiting the resources page
     Given I am on the home page
+    And I am logged in
     When I follow Resources
-    Then I should see Resources Stub
-  
+    Then I should see Upload Resource
+
   Scenario: visiting the contact us page
     Given I am on the contact us page
     Then I should see Contact Us

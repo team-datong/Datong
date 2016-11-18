@@ -42,7 +42,14 @@ When /^(.*) within (.*[^:]):$/ do |step, parent, table_or_string|
 end
 
 Given /^(?:|I )am on (.+)$/ do |page_name|
+  #byebug if page_name == 'resources'
   visit path_to(page_name)
+end
+
+
+Given /^I\'m on the edit page for (.*)$/ do |event_title|
+  event = Event.find_by(title: event_title)
+  visit edit_event_path(event)
 end
 
 When /^(?:|I )go to (.+)$/ do |page_name|
@@ -118,6 +125,10 @@ Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|
   else
     assert page.has_xpath?('//*', :text => regexp)
   end
+end
+
+And /^the page should have a (.*) element$/ do |css_type|
+  page.should have_css(css_type)
 end
 
 # Then /^(?:|I )should not see "([^"]*)"$/ do |text|
@@ -252,4 +263,3 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
-
