@@ -31,3 +31,5 @@ Datong_test
 
 # Ignore floobits
 .floo*
+
+/config/application.yml
