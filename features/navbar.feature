@@ -65,3 +65,7 @@ Scenario: visiting the events page from a different page
     Then I should see Logged in as
     And I should see Edit profile
     And I should see Log Out
+    When I follow Logged in as
+    Then I should see Logged in as
+    And I should not see Edit profile
+    And I should not see Log Out
