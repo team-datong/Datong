@@ -54,3 +54,18 @@ Scenario: visiting the events page from a different page
     Given I am on the people page
     Then I should see Contact
     And I should not see Contact Us
+
+  Scenario: Seeing account dropdown from homepage
+    Given I am on the home page
+    And I am logged in
+    Then I should see Logged in as
+    And I should not see Edit profile
+    And I should not see Log Out
+    When I follow Logged in as
+    Then I should see Logged in as
+    And I should see Edit profile
+    And I should see Log Out
+    When I follow Logged in as
+    Then I should see Logged in as
+    And I should not see Edit profile
+    And I should not see Log Out
