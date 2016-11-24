@@ -10,10 +10,10 @@
 # end
 # World(WithinHelpers)
 
-Given /^I am a (.*)$/ do |level|
+Given /^I am a(?:n?) (.*)$/ do |level|
   pending 
 end
 
-Given /^I am not a (.*)$/ do |level|
+Given /^I am not a(?:n?) (.*)$/ do |level|
   pending
 end
