@@ -25,7 +25,10 @@ module NavigationHelpers
       '/resources'
     when /^the events page$/
       '/events'
-
+    when /^the sign in page$/
+      '/users/sign_in'
+    when /^the sign up page$/
+      '/users/sign_up'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
