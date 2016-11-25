@@ -23,6 +23,10 @@ $( document ).ready(function(){
     $(".button-collapse").sideNav();
 });
 
+$(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+});
 
 // Some jquery script to change a class when resizing to smaller than 992 or larger than 992
 
