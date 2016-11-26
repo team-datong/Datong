@@ -1,7 +1,12 @@
-<h2>Sign up for Datong</h2>
+<h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.name_field :name, autofocus: true %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -22,7 +27,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign Up" %>
+    <%= f.submit "Sign up" %>
   </div>
 <% end %>
 
