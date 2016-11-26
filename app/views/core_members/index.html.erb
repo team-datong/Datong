@@ -1,0 +1,26 @@
+<h2>Core Members</h2>
+
+<table id="core_members">
+  <thead>
+  <tr>
+    <th>
+      Email
+    </th>
+    <th>
+      Core member?
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <% if @core_members.empty? %>
+          <tr><td>It looks like there are no Core Members yet!</td></tr>
+  <% else %>
+      <% @core_members.each do |core_member| %>
+          <tr>
+            <td><%= core_member.email %></td>
+            <td><%= core_member.is_core_member %></td>
+          </tr>
+      <% end %>
+  <% end %>
+  </tbody>
+</table>
