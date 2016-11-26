@@ -4,6 +4,8 @@ Rails.application.routes.draw do
       sessions: 'users/sessions',
       registrations: 'users/registrations'
   }
+  get 'core_members/index'
+
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
 
   root :to          => 'pages#home'
@@ -13,6 +15,13 @@ Rails.application.routes.draw do
   resources :resources, only: [:index, :new, :create, :destroy]
   resources :past_events
   resources :events
+
+  resources :core_members do
+    collection do
+      get 'edit_multiple'
+      put 'update_multiple'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
