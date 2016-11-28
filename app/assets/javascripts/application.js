@@ -11,9 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require materialize
 //= require jquery_ujs
 //= require tether
-//= require materialize
 //= require_tree
 //= require moment 
 //= require fullcalendar
