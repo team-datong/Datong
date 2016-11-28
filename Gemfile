@@ -58,3 +58,6 @@ gem 'bootstrap-sass', '~> 2.3.2'
 #FullCalendar for the calendar view on the events page
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+
+# For secrets
+gem 'figaro'
