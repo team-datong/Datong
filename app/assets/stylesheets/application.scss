@@ -24,18 +24,57 @@ $error-color: #EED6D6;
 $danger-color: #E83B3F;
 $warning-color: #fff59d;
 $success-color: #D8EECF;
+$sidenav-font-size: 2em !default;
+$sidenav-padding: 16px !default;
+//$sidenav-item-height: 48px !default;
+$sidenav-item-height: 2em !default;
+
+
 @import 'materialize';
 @import "materialize/extras/nouislider";
 
-
-.nav-wrapper {
-  padding: 0em 1em 0em 1em;
+nav {
+  @media only screen and (min-width: 0) {
+    height: 3em;
+    .nav-wrapper {
+      padding: .7em 1em 0 1em;
+    }
+  }
+  @media only screen and (min-width: $medium-screen) {
+    height: 64px;
+    .nav-wrapper {
+      padding: 0em 1em 0 1em;
+    }
+  }
 }
 
 .nav-wrapper .navbar-non-link {
   padding: 0 15px;
 }
 
+.side-nav {
+  width: 500px;
+}
+
+html{
+  line-height: 1.5;
+
+  @media only screen and (min-width: 0) {
+    font-size: 2em;
+  }
+
+  @media only screen and (min-width: $medium-screen) {
+    font-size: 1em;
+  }
+
+  @media only screen and (min-width: $large-screen) {
+    font-size: .8em;
+  }
+
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  color: $off-black;
+}
 .alert {
   border-radius: 3px;
   padding: 1em;
