@@ -2,8 +2,7 @@ language: ruby
 rvm:
 - 2.3.0
 notifications:
-  slack:
-    secure: ENV["slack_secure"]
+  slack: ENV["slack_secure"]
 
 script:
  - RAILS_ENV=test bundle exec rake db:migrate --trace
