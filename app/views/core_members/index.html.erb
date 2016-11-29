@@ -4,10 +4,10 @@
   <thead>
   <tr>
     <th>
-      Email
+      Name
     </th>
     <th>
-      Core member?
+      Email
     </th>
   </tr>
   </thead>
@@ -18,7 +18,7 @@
       <% @core_members.each do |core_member| %>
           <tr>
             <td><%= core_member.email %></td>
-            <td><%= core_member.is_core_member %></td>
+            <td><%= core_member.email %></td>
           </tr>
       <% end %>
   <% end %>

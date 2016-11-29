@@ -1,11 +1,11 @@
 class CoreMembersController < ApplicationController
   include CoreMembersHelper
   def index
-    @core_members = User.all
+    @core_members = User.where(is_core_member: true).to_a
   end
 
   def edit_multiple
-    @users = User.all
+    @users = User.order('email asc').all
   end
 
   def update_multiple

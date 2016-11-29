@@ -5,6 +5,9 @@
   <thead>
   <tr>
     <th>
+      Name
+    </th>
+    <th>
       Email
     </th>
     <th>
@@ -14,10 +17,11 @@
   </thead>
   <tbody>
   <% if @users.empty? %>
-      <tr><td>It looks like there are no Core Members yet!</td></tr>
+      <tr><td>It looks like there are no users yet!</td></tr>
   <% else %>
       <% @users.each do |user| %>
           <tr>
+            <td><%= user.email %></td>
             <td><%= user.email %></td>
             <td>
               <%= check_box_tag user.id, user.id, user.is_core_member, name: "user_ids[]" %>
