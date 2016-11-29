@@ -14,6 +14,9 @@ group :development, :test do
   gem 'foreman'
 end
 
+
+gem 'figaro'
+
 gem 'jquery-rails'
 # Can use ActiveModelSerializer instead
 gem 'jbuilder', '~> 2.5'

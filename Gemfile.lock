@@ -389,6 +389,7 @@ DEPENDENCIES
   dotenv-rails
   factory_girl_rails
   faker
+  figaro
   foreman
   fullcalendar-rails
   jasmine-rails
