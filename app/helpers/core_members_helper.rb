@@ -7,9 +7,6 @@ module CoreMembersHelper
   end
 
   def set_is_core_member(user_ids)
-    for user_id in user_ids
-      user = User.find(user_id)
-      user.update_attributes({is_core_member: true})
-    end
+    user_ids.map { |user_id| User.find(user_id).update_attributes({is_core_member: true}) }
   end
 end
