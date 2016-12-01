@@ -1,7 +1,54 @@
 require 'rails_helper'
+require 'spec_helper'
 
-describe 'EventController', type: :controller do
+describe 'EventsController', type: :controller do
   render_views
+
+  before :all do
+    @normal_user = FactoryGirl.create(
+        :user,
+        email: 'normal@user.com',
+        fname: 'normal',
+        lname: 'user',
+        confirmed_at: Time.now,
+        is_core_member: false,
+        is_event_admin: false,
+        is_account_admin: false
+    )
+
+    @core = FactoryGirl.create(
+        :user,
+        email: 'core@member.com',
+        fname: 'core',
+        lname: 'member',
+        confirmed_at: Time.now,
+        is_core_member: true,
+        is_event_admin: false,
+        is_account_admin: false
+    )
+
+    @event_admin = FactoryGirl.create(
+        :user,
+        email: 'event@admin.com',
+        fname: 'event',
+        lname: 'admin',
+        confirmed_at: Time.now,
+        is_core_member: false,
+        is_event_admin: true,
+        is_account_admin: false
+    )
+
+    @account_admin = FactoryGirl.create(
+        :user,
+        email: 'account@admin.com',
+        fname: 'account',
+        lname: 'admin',
+        confirmed_at: Time.now,
+        is_core_member: false,
+        is_event_admin: false,
+        is_account_admin: true
+    )
+  end
 
   before :each do
     @controller = EventsController.new
@@ -9,31 +56,54 @@ describe 'EventController', type: :controller do
 
   describe '#index' do
     it 'assigns @events' do
-      event = Event.create(title: 'Valid title')
+      sign_in(@event_admin)
+      event = Event.create(title: 'Valid title', end_time: 1.day.ago)
+      future_event = Event.create(title: 'Future', end_time: Time.now + 1.day)
       get :index
-      expect(assigns(:events)).to eq([event])
+      expect(assigns(:old_events)).to eq([event])
+      expect(assigns(:upcoming_events)).to eq([future_event])
     end
+
     it 'properly renders' do
       get :index
       expect(response).to render_template(:index)
     end
+
+    it '@core_members is false if not a core member' do
+      sign_in(@normal_user)
+      get :index
+      expect(assigns(:core_member)).to be(false)
+    end
+    it '@core_members is true if a core member' do
+      sign_in(@core)
+      get :index
+      expect(assigns(:core_member)).to be(true)
+    end
   end
 
   describe '#new' do
-    before :each do
-      get :new
-    end
     it 'assigns a new Event to @event' do
+      sign_in(@event_admin)
+      get :new
       expect(assigns(:event)).to be_a_new(Event)
+    end
+
+    it 'redirects if no permissions' do
+      get :new
+      expect(response).to have_http_status(:redirect)
     end
   end
 
   describe '#create' do
     it 'redirects to event' do
-      post :create, event: FactoryGirl.attributes_for(:event)
-      expect(response).to redirect_to(Event.last)
+      sign_in(@event_admin)
+      post :create, event: { title: 'saved event', end_time: Time.now }
+      expect(response).to redirect_to(event_url(Event.last))
+
     end
+
     it 'renders new page on failed save' do
+      sign_in(@event_admin)
       post :create, event: FactoryGirl.attributes_for(:event, title: nil)
       expect(response).to render_template(:new)
     end
@@ -41,6 +111,7 @@ describe 'EventController', type: :controller do
 
   describe '#edit' do
     before :each do
+      sign_in(@event_admin)
       @event = Event.create(title: 'event title')
       get :edit, id: @event.id
     end
@@ -51,6 +122,7 @@ describe 'EventController', type: :controller do
 
   describe '#update' do
     before :each do
+      sign_in(@event_admin)
       @event = FactoryGirl.create(:event, title: 'current title')
     end
     context 'valid attributes' do
@@ -88,6 +160,7 @@ describe 'EventController', type: :controller do
 
   describe '#destroy' do
     before :each do
+      sign_in(@event_admin)
       @event = FactoryGirl.create(:event, title: 'current title')
     end
     it 'should no longer exist' do
