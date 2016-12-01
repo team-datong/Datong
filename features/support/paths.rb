@@ -16,7 +16,7 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/'
     when /^the people page$/
-      '/people'
+      '/core_members/index'
     when /^the about us page$/
       '/about_us'
     when /^the past events page$/
@@ -29,6 +29,8 @@ module NavigationHelpers
       '/users/sign_in'
     when /^the sign up page$/
       '/users/sign_up'
+    when /^the Core Members page$/
+      'core_members/index'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

@@ -1,0 +1,37 @@
+<h2>Edit core members</h2>
+
+<%= form_tag update_multiple_core_members_path, :method => :put do %>
+<table id="core_members">
+  <thead>
+  <tr>
+    <th>
+      Name
+    </th>
+    <th>
+      Email
+    </th>
+    <th>
+      Core member?
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <% if @users.empty? %>
+      <tr><td>It looks like there are no users yet!</td></tr>
+  <% else %>
+      <% @users.each do |user| %>
+          <tr>
+            <td><%= user.email %></td>
+            <td><%= user.email %></td>
+            <td>
+              <%= check_box_tag user.id, user.id, user.is_core_member, name: "user_ids[]" %>
+              <%= label_tag user.id, "" %>
+            </td>
+          </tr>
+      <% end %>
+  <% end %>
+  </tbody>
+</table>
+<%= submit_tag 'Update', class: "btn waves-effect waves-light" %>
+<%= link_to 'Cancel', core_members_index_path, class: "btn waves-light waves-effect", style:"margin-left:1em;" %>
+<% end %>
