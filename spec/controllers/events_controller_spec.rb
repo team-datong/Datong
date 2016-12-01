@@ -1,10 +1,13 @@
 require 'rails_helper'
 
-describe 'EventController', type: :controller do
+describe 'EventsController', type: :controller do
   render_views
 
   before :each do
     @controller = EventsController.new
+    user = double('user')
+    allow(request.env['warden']).to receive(:authenticate!).and_return(user)
+    allow(controller).to receive(:current_user).and_return(user)
   end
 
   describe '#index' do
