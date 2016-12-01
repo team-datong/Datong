@@ -6,7 +6,8 @@ Feature: When I visit a static page, its content should match its counterpart on
   Scenario: visiting the about us page
     Given I am on the home page
     Then I should see the nav bar
-    And I should see jumbotron
+    And I should see Da-Tong Society of China Studies
+    And I should see Sponsored by Center for Chinese Studies
 
   Scenario: visiting the people page
     Given I am on the people page
