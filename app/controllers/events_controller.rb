@@ -1,9 +1,22 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_event_admin!, except: [:index, :show]
+
+
+  def authenticate_event_admin!
+    if current_user.nil? or !current_user.is_event_admin
+      flash[:notice] = 'You do not have access to this page.'
+      redirect_to events_path
+    end
+  end
 
   # GET /events
   # GET /events.json
   def index
+    @core_member = false
+    if !current_user.nil? and current_user.is_core_member
+      @core_member = true
+    end
     @upcoming_events = Event.where("end_time > ?", Time.now.utc().to_s)
     @old_events = Event.where("end_time <= ?", Time.now.utc().to_s)
   end

@@ -1,9 +1,11 @@
 
 <br />
+<% if @core_member %>
+  <%= link_to "Upload Resource", new_resource_path, class: "btn btn-primary", id: "upload" %>
+<% end %>
+<br />
+<br />
 
-<%= link_to "Upload Resource", new_resource_path, class: "btn btn-primary", id: "upload" %>
-<br />
-<br />
 
 <table class = "table table-bordered table-striped">
    <thead>
@@ -15,6 +17,10 @@
    </thead>
    
    <tbody>
+   <% if @resources.nil? or @resources.empty? %>
+       <tr><td>There are no resources uploaded currently.</tr></td>
+
+   <% else %>
       <% @resources.each do |resource| %>
          
          <tr>
@@ -24,6 +30,7 @@
          </tr>
          
       <% end %>
+   <%end%>
    </tbody>
    
 </table>

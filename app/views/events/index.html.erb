@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Upcoming Events</h1>
 
 <!--display calendar-->
@@ -21,9 +19,13 @@
   });
 </script>
 
+
 <div id="calendar"></div>
 
-<%= link_to 'New Event', new_event_path %>
+
+<% if @core_member %>
+  <%= link_to 'New Event', new_event_path %>
+<% end %>
 
 <%= render partial: "table", locals: {events: @upcoming_events}%>
 
