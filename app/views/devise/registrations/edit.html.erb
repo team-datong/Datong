@@ -5,8 +5,13 @@
 
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
+    <%= f.label :First_Name %><br />
+    <%= f.text_field :fname, required: true%>
+  </div>
+
+  <div class="field">
+    <%= f.label :Last_Name %><br />
+    <%= f.text_field :lname, required: true %>
   </div>
 
   <div class="field">
