@@ -1,13 +1,57 @@
 require 'rails_helper'
+require 'spec_helper'
 
 describe 'EventsController', type: :controller do
   render_views
 
+  before :all do
+    @normal_user = FactoryGirl.create(
+        :user,
+        email: 'normal@user.com',
+        fname: 'normal',
+        lname: 'user',
+        confirmed_at: Time.now,
+        is_core_member: false,
+        is_event_admin: false,
+        is_account_admin: false
+    )
+
+    @core_member = FactoryGirl.create(
+        :user,
+        email: 'core@member.com',
+        fname: 'core',
+        lname: 'member',
+        confirmed_at: Time.now,
+        is_core_member: true,
+        is_event_admin: false,
+        is_account_admin: false
+    )
+
+    @event_admin = FactoryGirl.create(
+        :user,
+        email: 'event@admin.com',
+        fname: 'event',
+        lname: 'admin',
+        confirmed_at: Time.now,
+        is_core_member: false,
+        is_event_admin: true,
+        is_account_admin: false
+    )
+
+    @account_admin = FactoryGirl.create(
+        :user,
+        email: 'account@admin.com',
+        fname: 'account',
+        lname: 'admin',
+        confirmed_at: Time.now,
+        is_core_member: false,
+        is_event_admin: false,
+        is_account_admin: true
+    )
+  end
+
   before :each do
     @controller = EventsController.new
-    user = double('user')
-    allow(request.env['warden']).to receive(:authenticate!).and_return(user)
-    allow(controller).to receive(:current_user).and_return(user)
   end
 
   describe '#index' do
