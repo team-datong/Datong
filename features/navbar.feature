@@ -11,7 +11,14 @@ Feature: When I visit a page with a navbar, the links should be clickable and le
   Scenario: visiting the home page from the people page
     Given I am on the people page
     When I follow Datong
-    Then I should see jumbotron
+    Then I should see Hosted by OCF
+    And I should see Sponsor
+    And I should see Passion
+    And I should see 积极的学术热情，无私的学术精神
+    And I should see Integrity
+    And I should see 优良的学术品质，独立的学术能力
+    And I should see Open-mindness
+    And I should see 持重的学术态度，包容的学术胸怀
     And I should not see Core Members
 
 Scenario: visiting the events page from a different page
@@ -54,3 +61,18 @@ Scenario: visiting the events page from a different page
     Given I am on the people page
     Then I should see Contact
     And I should not see Contact Us
+
+  Scenario: Seeing account dropdown from homepage
+    Given I am on the home page
+    And I am logged in
+    Then I should see Logged in as
+    And I should not see Edit profile
+    And I should not see Log Out
+    When I follow Logged in as
+    Then I should see Logged in as
+    And I should see Edit profile
+    And I should see Log Out
+    When I follow Logged in as
+    Then I should see Logged in as
+    And I should not see Edit profile
+    And I should not see Log Out

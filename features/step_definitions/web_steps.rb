@@ -131,6 +131,10 @@ And /^the page should have a (.*) element$/ do |css_type|
   page.should have_css(css_type)
 end
 
+And /^the page should not have a (.*) element$/ do |css_type|
+  page.should_not have_css(css_type)
+end
+
 # Then /^(?:|I )should not see "([^"]*)"$/ do |text|
 #   if page.respond_to? :should
 #     page.should have_no_content(text)

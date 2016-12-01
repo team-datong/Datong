@@ -6,7 +6,7 @@ describe '.home' do
   it 'page properly renders' do
     visit ''
 
-    expect(page).to have_content("jumbotron")
+    expect(page).to have_content("Da-Tong Society of China Studies")
   end
 end
 
