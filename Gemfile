@@ -9,6 +9,13 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'bootstrap', '~> 4.0.0.alpha4'
 gem 'devise'
+gem 'dotenv-rails'
+group :development, :test do
+  gem 'foreman'
+end
+
+
+gem 'figaro'
 
 gem 'jquery-rails'
 # Can use ActiveModelSerializer instead
