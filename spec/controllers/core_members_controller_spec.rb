@@ -50,6 +50,11 @@ describe CoreMembersController, type: :controller do
     )
   end
 
+  after :all do
+    User.all.map{ |user| user.destroy }
+  end
+
+
   before :each do
     @controller = CoreMembersController.new
   end
