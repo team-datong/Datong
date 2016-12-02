@@ -18,41 +18,53 @@ Feature: User Authentication with Devise
 
   Scenario: Signing up for an account
     Given I am on the home page
+    And I should see Sign Up
     When I follow Sign Up
     Then I should see Sign up for Datong
     When I fill in "user_email" with "datongtest@datong.berkeley.edu"
     And I fill in "user_password" with "hunter2"
     And I fill in "user_password_confirmation" with "hunter2"
-    And I press "Sign Up"
-    Then I should see Welcome! You have signed up successfully.
+    And I fill in "user_fname" with "User"
+    And I fill in "user_lname" with "Lastname"
+    And I press "Sign up"
+    Then I should see A message with a confirmation link has been sent to your email address. Please follow the link to activate your account.
 
   Scenario: Signing up with existing email
-    Given I have an account for datongtest@datong.berkeley.edu
+    Given I have an account for datongtest@datong.berkeley.edu and confirmed my email
     And I am on the home page
     And I follow Sign Up
     When I fill in "user_email" with "datongtest@datong.berkeley.edu"
     And I fill in "user_password" with "hunter2"
     And I fill in "user_password_confirmation" with "hunter2"
-    And I press "Sign Up"
+    And I press "Sign up"
     Then I should see Email has already been taken
 
-  Scenario: Signing in to an existing account
-    Given I have an account for datongtest@datong.berkeley.edu
+  Scenario: Signing in to an existing account without confirmation
+    Given I have an account for datongtest@datong.berkeley.edu without confirming
     And I am on the home page
     And I follow Sign In
     When I fill in "user_email" with "datongtest@datong.berkeley.edu"
     And I fill in "user_password" with "hunter2"
-   And I press "Log In"
+    And I press "Log in"
+    Then I should see You have to confirm your email address before continuing.
+
+  Scenario: Signing in to an existing account with confirmation
+    Given I have an account for datongtest@datong.berkeley.edu and confirmed my email
+    And I am on the home page
+    And I follow Sign In
+    When I fill in "user_email" with "datongtest@datong.berkeley.edu"
+    And I fill in "user_password" with "hunter2"
+    And I press "Log in"
     Then I should see Signed in successfully
 
 
   Scenario: Signing in with an incorrect password
-    Given I have an account for datongtest@datong.berkeley.edu
+    Given I have an account for datongtest@datong.berkeley.edu and confirmed my email
     And I am on the home page
     When I follow Sign In
     And I fill in "user_email" with "datongtest@datong.berkeley.edu"
     And I fill in "user_password" with "hunter2wrong"
-    And I press "Log In"
+    And I press "Log in"
     Then I should see Invalid Email or password
 
   Scenario: Signing in with a nonexisting email
@@ -60,7 +72,7 @@ Feature: User Authentication with Devise
     And I follow Sign In
     When I fill in "user_email" with "datongtest@datong.berkeley.edu"
     And I fill in "user_password" with "hunter2"
-    And I press "Log In"
+    And I press "Log in"
     Then I should see Invalid Email or password
 
   Scenario: Signing out
@@ -76,9 +88,10 @@ Feature: User Authentication with Devise
     When I fill in "user_email" with "datongtest@datong.berkeley.edu"
     And I fill in "user_password" with "hunter2"
     And I fill in "user_password_confirmation" with "hunter2"
-    And I press "Sign Up"
-    Then I should see Welcome! You have signed up successfully.
-    And I should be a Berkeley student
+    And I fill in "user_fname" with "User"
+    And I fill in "user_lname" with "Lastname"
+    And I press "Sign up"
+    Then I should see A message with a confirmation link has been sent to your email address. Please follow the link to activate your account.
 
   Scenario: Creating an account with a non-Berkeley email
     Given I am on the home page
@@ -86,6 +99,7 @@ Feature: User Authentication with Devise
     When I fill in "user_email" with "datongtest@sdfsdf.com"
     And I fill in "user_password" with "hunter2"
     And I fill in "user_password_confirmation" with "hunter2"
-    And I press "Sign Up"
-    Then I should see Welcome! You have signed up successfully.
-    And I should be a non-Berkeley student user
+    And I fill in "user_fname" with "User"
+    And I fill in "user_lname" with "Lastname"
+    And I press "Sign up"
+    Then I should see A message with a confirmation link has been sent to your email address. Please follow the link to activate your account.

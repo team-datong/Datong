@@ -11,8 +11,12 @@
 # World(WithinHelpers)
 
 
-Given /^I have an account for (.*)$/ do |account|
-  User.create!(email: account, password: 'hunter2')
+Given /^I have an account for (.*) without confirming$/ do |account|
+  User.create!(email: account, password: 'hunter2', fname: 'user', lname: 'juan')
+end
+
+Given /^I have an account for (.*) and confirmed my email$/ do |account|
+  User.create!(email: account, password: 'hunter2', fname: 'user', lname: 'juan', confirmed_at: DateTime.now)
 end
 
 Then /^I should be a (.*)$/ do |level|
