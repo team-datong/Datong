@@ -4,14 +4,14 @@ Feature: Core Members
   And I should be able to see the Core Members listed
 
 Scenario: Visiting the Core Members page
-  Given I am a visitor
+  Given I am not a core member
   And I am on the Core Members page
   Then I should see Core Members
   And the page should have a ul element
   And the page should have a li element
 
 Scenario: Visiting the Core Members page as an admin
-  Given I am an admin
+  Given I am a core member
   And I am on the Core Members page
   Then I should see Core Members
   And the page should have a ul element

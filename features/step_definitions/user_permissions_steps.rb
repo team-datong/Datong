@@ -1,19 +1,35 @@
-# require 'uri'
-# require 'cgi'
-# require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
-# require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "selectors"))
-#
-# module WithinHelpers
-#   def with_scope(locator)
-#     locator ? within(*selector_for(locator)) { yield } : yield
-#   end
-# end
-# World(WithinHelpers)
-
 Given /^I am a(?:n?) (.*)$/ do |level|
-  pending 
+  email = 'datongtest@datong.berkeley.edu'
+  password = 'hunter2'
+  User.create(:email => email,
+           :password => password,
+           :fname => 'first',
+           :lname => 'last',
+           :confirmed_at => Time.now).save!
+
+  visit '/users/sign_in'
+  fill_in "user_email", :with => email
+  fill_in "user_password", :with => password
+  click_button "Log in"
+
+  role = level.downcase.split(" ")
+  User.last.update_attribute("is_#{role.join('_')}", true)
 end
 
 Given /^I am not a(?:n?) (.*)$/ do |level|
-  pending
+  email = 'datongtest@datong.berkeley.edu'
+  password = 'hunter2'
+  User.create(:email => email,
+              :password => password,
+              :fname => 'first',
+              :lname => 'last',
+              :confirmed_at => Time.now).save!
+
+  visit '/users/sign_in'
+  fill_in "user_email", :with => email
+  fill_in "user_password", :with => password
+  click_button "Log in"
+
+  role = level.downcase.split(" ")
+  User.last.update_attribute("is_#{role.join('_')}", false)
 end
