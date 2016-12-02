@@ -35,14 +35,19 @@ Given /^I am not logged in$/ do
 end
 
 Given /^I am logged in$/ do
+  fname = 'Da'
+  lname = 'Tong'
   email = 'datongtest@datong.berkeley.edu'
   password = 'hunter2'
-  User.new(:email => email, :password => password, :password_confirmation => password).save!
+  User.new(:fname => fname, :lname => lname, :email => email, :password => password, :password_confirmation => password).save!
+  user = User.first
+  user.confirm
+
 
   visit '/users/sign_in'
   fill_in "user_email", :with => email
   fill_in "user_password", :with => password
-  click_button "Log In"
+  click_button "Log in"
 end
 
 When /^(?:|I )follow (.*)$/ do |link|
