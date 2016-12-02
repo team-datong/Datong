@@ -7,7 +7,6 @@ Feature: When I visit the resources page as a core member, I would like to updat
 
   Scenario: uploading resource as core member correctly
     Given I am logged in
-    #And I have core access
     And I am on the resources page
     Then I should see Upload Resource
   #   When I follow upload

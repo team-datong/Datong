@@ -5,37 +5,46 @@ Feature: When I visit the events page, I should see all the events
   And I am logged in
   I should also be able to add/delete events
 
-  Background:
+  Scenario:
     Given I am an event admin
     And I am on the events page
     When I follow New Event
     Then I should see New Event
-    When I fill in "Title" with "Test Event"
-    And I press "Create Event"
 
   Scenario: visiting the events page
     Given I am on the events page
     Then I should see Upcoming Events
+    And I should see Past Events
     And the page should have a div#calendar element
+    And I should not see New Event
 
   Scenario: Creating a new event
-    Given I am on the events page
+    Given I am an event admin
+    And I am on the events page
     When I follow New Event
     Then I should see New Event
-    When I fill in "Title" with "Test Event 2"
-    And I press "Create Event"
-    Then I should see Test Event 2
+    When I create the event Test Event
+    Then I am on the events page
+    Then I should see Test Event
 
   Scenario: Creating a new event incorrectly
-    Given I am on the events page
+    Given I am an event admin
+    And I am on the events page
     When I follow New Event
     Then I should see New Event
     When I fill in "Title" with ""
     And I press "Create Event"
     Then I should see error
 
+  Scenario: Visiting the certain events page without access
+    When I am on the new events page
+    Then I should see You do not have access to this page.
+
   Scenario: Editing an existing event correctly
-    Given I'm on the edit page for Test Event
+    Given I am an event admin
+    And I am on the events page
+    Given I create the event Test Event
+    And I'm on the edit page for Test Event
     Then I should see Editing Event
     And I fill in "Title" with "Updated Test Event"
     And I press "Update Event"
@@ -43,7 +52,10 @@ Feature: When I visit the events page, I should see all the events
 
 
   Scenario: Editing an existing event incorrectly
-    Given I'm on the edit page for Test Event
+    Given I am an event admin
+    And I am on the events page
+    Given I create the event Test Event
+    And I'm on the edit page for Test Event
     Then I should see Editing Event
     And I fill in "Title" with ""
     And I press "Update Event"
@@ -51,7 +63,11 @@ Feature: When I visit the events page, I should see all the events
 
 
   Scenario: Deleting an existing event
-    Given I am on the events page
+    Given I am an event admin
+    And I am on the events page
+    Given I create the event Test Event
+    And I am on the events page
+    Then I should see Test Event
     When I follow Destroy
     Then I should not see Test Event
 

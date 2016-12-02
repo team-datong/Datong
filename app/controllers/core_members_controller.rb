@@ -24,6 +24,7 @@ class CoreMembersController < ApplicationController
     if !@core_members.nil? && !@core_members.empty?
       set_is_core_member(@core_members)
     end
+    flash[:success] = 'Success! Core members updated.'
     redirect_to core_members_index_path
   end
 end
