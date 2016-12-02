@@ -10,9 +10,13 @@ module WithinHelpers
 end
 World(WithinHelpers)
 
-And /^(?:|I )upload the "(.*)"$/ do |filename|
-    test_file = fixture_file_upload('features/testfiles/test_file.txt', 'text')
-    post "/resources", :title => 'test_file_name', :attachment => test_file
+And /^(?:|I )upload "(.*)"$/ do |filename|
+  page.attach_file('resource_attachment', File.join(Rails.root, 'features', 'testfiles', filename))
+end
+
+And /^The "(.*)" file exists$/ do |filename|
+  test_file = fixture_file_upload('features/testfiles/test_file.txt', 'text')
+  Resource.new(:title => filename, :attachment => test_file).save!
 end
 
 When /^(?:|I )have "(.*)" access$/ do |auth|

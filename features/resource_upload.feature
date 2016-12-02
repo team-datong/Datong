@@ -6,46 +6,44 @@ Feature: When I visit the resources page as a core member, I would like to updat
   I should not be able to upload resources
 
   Scenario: uploading resource as core member correctly
-    Given I am logged in
+    Given I am a core member
     And I am on the resources page
     Then I should see Upload Resource
-  #   When I follow upload
-  #   And I fill in "resource_title" with "Resource1"
-  #   And I upload the "testfile"
-  #   When I press submit
-  #   Then I should see Resource1
+    When I follow upload
+    And I fill in "resource_title" with "Resource1"
+    And I upload "test_file.txt"
+    When I press "Save"
+    Then I should see Resource1
     
-  # Scenario: deleting resource as core member correctly
-  #   Given I am on the resources page
-  #   #And I have core access
-  #   And I am logged in
-  #   Then I should see the delete button 
-  #   When I press delete
-  #   And I should not see TestResourceName
+  Scenario: deleting resource as core member correctly
+      Given The "Resource1" file exists
+      And I am on the resources page
+      And I am a core member
+      When I press "Delete"
+      Then I should see The resource Resource1 has been deleted.
+      And I should see There are no resources uploaded currently
     
-  # Scenario: uploading resource as core member incorrectly without title
-  #   Given I am logged in
-  #   And I am on the resources page
-  #   #And I have core access
+  Scenario: uploading resource as core member incorrectly without title
+      Given I am a core member
+      And I am on the resources page
+      When I follow upload
+      And I upload "test_file.txt"
+      When I press "Save"
+      Then I should see Title can't be blank
     
-  #   Then I should see Upload Resource
-    #When I press "upload" 
-    #And I upload the testfile
-    #When I follow submit
-    #Then I should see Title can't be blank
-    
-  # Scenario: uploading resource as core member incorrectly without attachment
-  #   Given I am on the resources page
-  #   #And I have core access
-  #   And I am logged in
-  #   When I fill in title with Resource1
-  #   When I press submit  
-  #   Then I should see Attachment can't be blank
+  Scenario: uploading resource as core member incorrectly without attachment
+    Given I am on the resources page
+    And I am a core member
+    When I follow upload
+    When I fill in "resource_title" with "Resource1"
+    And I press "Save"  
+    Then I should see Attachment can't be blank
   
-  # Scenario: downloading resource as logged in member
-  #   Given I am on the resources page
-  #   And I have member access
-  #   And I should see the download button
+  Scenario: downloading resource as logged in member
+      Given The "Resource1" file exists
+      And I am on the resources page
+      And I am logged in
+      Then I should see Download Resource
     
   Scenario: not seeing resource in navbar as visitor
     Given I am on the home page
