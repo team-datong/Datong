@@ -6,7 +6,8 @@ Feature: When I visit the events page, I should see all the events
   I should also be able to add/delete events
 
   Background:
-    Given I am on the events page
+    Given I am an event admin
+    And I am on the events page
     When I follow New Event
     Then I should see New Event
     When I fill in "Title" with "Test Event"
