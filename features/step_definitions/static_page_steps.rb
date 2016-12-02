@@ -42,8 +42,6 @@ Given /^I am logged in$/ do
   User.new(:fname => fname, :lname => lname, :email => email, :password => password, :password_confirmation => password).save!
   user = User.first
   user.confirm
-
-
   visit '/users/sign_in'
   fill_in "user_email", :with => email
   fill_in "user_password", :with => password

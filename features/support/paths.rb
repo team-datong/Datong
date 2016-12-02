@@ -33,6 +33,9 @@ module NavigationHelpers
       '/core_members/index'
       when /^the Edit Core Members page$/
       '/core_members/edit_multiple'
+    when /^the new events page$/
+      '/events/new'
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
