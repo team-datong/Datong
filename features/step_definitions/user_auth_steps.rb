@@ -26,7 +26,3 @@ end
 Then /^I should not be (.*)$/ do |level|
   pending
 end
-
-Given /^I reset my password to (.*)$/ do |password|
-  pending
-end
