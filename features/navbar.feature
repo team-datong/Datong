@@ -17,7 +17,7 @@ Feature: When I visit a page with a navbar, the links should be clickable and le
     And I should see 积极的学术热情，无私的学术精神
     And I should see Integrity
     And I should see 优良的学术品质，独立的学术能力
-    And I should see Open-mindness
+    And I should see Open-mindedness
     And I should see 持重的学术态度，包容的学术胸怀
     And I should not see Core Members
 
