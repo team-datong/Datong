@@ -39,7 +39,5 @@ describe '.contact_us' do
     visit '/contact_us'
 
     expect(page).to have_content("Contact Us")
-    expect(page).to have_content("Facebook Page:")
-    expect(page).to have_content("WeChat Official Account")
   end
 end

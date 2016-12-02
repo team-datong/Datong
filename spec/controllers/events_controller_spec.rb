@@ -82,15 +82,15 @@ describe 'EventsController', type: :controller do
       expect(response).to render_template(:index)
     end
 
-    it '@core_members is false if not a core member' do
+    it '@event_admin is false if not a event admin' do
       sign_in(@normal_user)
       get :index
-      expect(assigns(:core_member)).to be(false)
+      expect(assigns(:event_admin)).to be(false)
     end
-    it '@core_members is true if a core member' do
-      sign_in(@core)
+    it '@event_admin is true if an event admin' do
+      sign_in(@event_admin)
       get :index
-      expect(assigns(:core_member)).to be(true)
+      expect(assigns(:event_admin)).to be(true)
     end
   end
 
