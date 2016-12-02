@@ -5,7 +5,12 @@ describe CoreMembersController, type: :controller do
   render_views
 
   before :all do
-    @normal_user = FactoryGirl.create(
+    @normal_user = User.find_by(email: 'normal@user.com')
+    @core = User.find_by(email: 'core@member.com')
+    @event_admin = User.find_by(email: 'event@admin.com')
+    @account_admin = User.find_by(email: 'account@admin.com')
+
+    @normal_user ||= FactoryGirl.create(
         :user,
         email: 'normal@user.com',
         fname: 'normal',
@@ -16,7 +21,7 @@ describe CoreMembersController, type: :controller do
         is_account_admin: false
     )
 
-    @core = FactoryGirl.create(
+    @core ||= FactoryGirl.create(
         :user,
         email: 'core@member.com',
         fname: 'core',
@@ -27,7 +32,7 @@ describe CoreMembersController, type: :controller do
         is_account_admin: false
     )
 
-    @event_admin = FactoryGirl.create(
+    @event_admin ||= FactoryGirl.create(
         :user,
         email: 'event@admin.com',
         fname: 'event',
@@ -38,7 +43,7 @@ describe CoreMembersController, type: :controller do
         is_account_admin: false
     )
 
-    @account_admin = FactoryGirl.create(
+    @account_admin ||= FactoryGirl.create(
         :user,
         email: 'account@admin.com',
         fname: 'account',
