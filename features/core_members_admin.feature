@@ -6,47 +6,52 @@ Feature: Core Members admin control
 Scenario: Visiting the Core Members edit page without admin permissions
   Given I am not a Core Member
   And I am on the Edit Core Members page
-  Then the page should not have a input#is_core_member element
-  And I should not see Users
+  Then I should not see Edit core members
 
 Scenario: Visiting the Core Members edit page with admin permissions
-  Given I am a Core Member
+  Given I am an Account Admin
   And I am on the Edit Core Members page
-  Then the page should have a input#is_core_member element
-  And I should see Users
-
-Scenario: Adding a Core Member
-  Given I am a Core Member
-  And I am on the Edit Core Members page
-  And the "Core Member" checkbox should not be checked
-  And I check "is_core_member"
-  And I press "Save"
-  Then I should see Success
-  And the "Core Member" checkbox should be checked
+  Then the page should have a label element
 
 Scenario: Removing a Core Member
-  Given I am a Core Member
+  Given I am an Account Admin
   And I am on the Edit Core Members page
-  And the "Core Member" checkbox should be checked
-  And I uncheck "is_core_member"
-  And I press "Save"
+  And the "" checkbox should not be checked
+  And I check ""
+  And I press "Update"
   Then I should see Success
-  And the "Core Member" checkbox should be checked
+  And I am on the Edit Core Members page
+  Then the "" checkbox should be checked
+
+Scenario: Adding a Core Member
+  Given I am an Account Admin
+  And I am on the Edit Core Members page
+  And I uncheck ""
+  And I press "Update"
+  And I am on the Edit Core Members page
+  And the "" checkbox should not be checked
+  And I check ""
+  And I press "Update"
+  Then I should see Success
+  And I am on the Edit Core Members page
+  And the "" checkbox should be checked
 
 Scenario: Cancelling addition of Core Member
-  Given I am a Core Member
+  Given I am an Account Admin
   And I am on the Edit Core Members page
-  And the "Core Member" checkbox should not be checked
-  And I check "is_core_member"
-  And I press "Cancel"
+  And the "" checkbox should not be checked
+  And I check ""
+  And I follow Cancel
   Then I should not see Success
-  And the "Core Member" checkbox should not be checked
+  And I am on the Edit Core Members page
+  And the "" checkbox should not be checked
 
 Scenario: Cancelling removal of Core Member
-  Given I am a Core Member
+  Given I am an Account Admin
   And I am on the Edit Core Members page
-  And the "Core Member" checkbox should be checked
-  And I uncheck "is_core_member"
-  And I press "Cancel"
+  And the "" checkbox should not be checked
+  And I check ""
+  And I follow Cancel
   Then I should not see Success
-  And the "Core Member" checkbox should be checked
+  And I am on the Edit Core Members page
+  And the "" checkbox should not be checked
