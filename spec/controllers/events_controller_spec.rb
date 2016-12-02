@@ -50,6 +50,10 @@ describe 'EventsController', type: :controller do
     )
   end
 
+  after :all do
+    User.all.map{ |user| user.destroy }
+  end
+
   before :each do
     @controller = EventsController.new
   end
