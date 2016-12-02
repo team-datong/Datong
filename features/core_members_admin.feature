@@ -4,17 +4,16 @@ Feature: Core Members admin control
   I should be able to access a page that allows me to edit who the core members are
 
 Scenario: Visiting the Core Members edit page without admin permissions
-  Given I am not a Core Member
-  And I am on the Edit Core Members page
+  Given I am on the Edit Core Members page
   Then I should not see Edit core members
 
 Scenario: Visiting the Core Members edit page with admin permissions
-  Given I am an Account Admin
+  Given I am an account admin
   And I am on the Edit Core Members page
   Then the page should have a label element
 
 Scenario: Removing a Core Member
-  Given I am an Account Admin
+  Given I am an account admin
   And I am on the Edit Core Members page
   And the "" checkbox should not be checked
   And I check ""
@@ -24,7 +23,7 @@ Scenario: Removing a Core Member
   Then the "" checkbox should be checked
 
 Scenario: Adding a Core Member
-  Given I am an Account Admin
+  Given I am an account admin
   And I am on the Edit Core Members page
   And I uncheck ""
   And I press "Update"
@@ -37,7 +36,7 @@ Scenario: Adding a Core Member
   And the "" checkbox should be checked
 
 Scenario: Cancelling addition of Core Member
-  Given I am an Account Admin
+  Given I am an account admin
   And I am on the Edit Core Members page
   And the "" checkbox should not be checked
   And I check ""
@@ -47,7 +46,7 @@ Scenario: Cancelling addition of Core Member
   And the "" checkbox should not be checked
 
 Scenario: Cancelling removal of Core Member
-  Given I am an Account Admin
+  Given I am an account admin
   And I am on the Edit Core Members page
   And the "" checkbox should not be checked
   And I check ""

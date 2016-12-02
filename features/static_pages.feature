@@ -23,10 +23,10 @@ Feature: When I visit a static page, its content should match its counterpart on
     Given I am on the home page
     And I am logged in
     When I follow Resources
-    Then I should see Upload Resource
+    Then I should not see Upload Resource
+
 
   Scenario: visiting the contact us page
     Given I am on the contact us page
     Then I should see Contact Us
-    And I should see Facebook
-    And I should see WeChat Official Account
+

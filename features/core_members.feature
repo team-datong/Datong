@@ -4,8 +4,7 @@ Feature: Core Members
   And I should be able to see the Core Members listed
 
 Scenario: Visiting the Core Members page
-  Given I am not a core member
-  And I am on the Core Members page
+  Given I am on the Core Members page
   Then I should see Core Members
   And the page should have a ul element
   And the page should have a li element
