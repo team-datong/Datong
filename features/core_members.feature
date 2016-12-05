@@ -8,6 +8,7 @@ Scenario: Visiting the Core Members page
   Then I should see Core Members
   And the page should have a ul element
   And the page should have a li element
+  And I should see Current semester
 
 Scenario: Visiting the Core Members page as an admin
   Given I am a core member
