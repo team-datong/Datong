@@ -9,7 +9,7 @@ Scenario: Visiting the Core Members edit page without admin permissions
 
 Scenario: Visiting the Core Members edit page with admin permissions
   Given I am an account admin
-  And I am on the Edit Core Members page
+  And I follow Edit
   Then the page should have a label element
 
 Scenario: Removing a Core Member
