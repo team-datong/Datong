@@ -11,6 +11,10 @@ class CoreMembersController < ApplicationController
   end
 
   def index
+    @is_account_admin = false
+    if !current_user.nil? and current_user.is_account_admin
+      @is_account_admin = true
+    end
     @core_members = User.where(is_core_member: true).to_a
   end
 
