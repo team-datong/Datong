@@ -68,7 +68,7 @@ Feature: When I visit the events page, I should see all the events
     Given I create the event Test Event
     And I am on the events page
     Then I should see Test Event
-    When I follow Destroy
+    When I follow Delete
     Then I should not see Test Event
 
 
