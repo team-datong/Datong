@@ -28,6 +28,9 @@ $(document).ready(function(){
     $('.modal-trigger').leanModal();
 });
 
+$(".dropdown-button").dropdown();
+        
+
 // Some jquery script to change a class when resizing to smaller than 992 or larger than 992
 
 $( window ).on('load resize', function() {

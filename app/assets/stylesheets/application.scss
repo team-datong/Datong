@@ -25,8 +25,9 @@ $error-color: #EED6D6;
 $danger-color: #E83B3F;
 $warning-color: #fff59d;
 $success-color: #D8EECF;
-$sidenav-font-size: 2em !default;
-$sidenav-padding: 16px !default;
+$sidenav-font-size: 1em;
+$sidenav-font-color: $primary-color;
+$sidenav-padding: 30px;
 //$sidenav-item-height: 48px !default;
 $sidenav-item-height: 2em !default;
 
@@ -55,6 +56,21 @@ nav {
 
 .side-nav {
   width: 500px;
+}
+
+.dropdown-content {
+  margin: 0;
+  display: none;
+  min-width: max-content;
+  max-width: auto;
+  min-height: max-content;
+  opacity: 0;
+  z-index: 1;
+    line-height: 1.5;
+ 
+  li:hover {
+    background-color: white;
+  }
 }
 
 html{
