@@ -1,16 +1,20 @@
 <head>  
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+<% if user_signed_in? %>
 <ul id="account_dropdown" class="dropdown-content">
   <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
   <li class="divider"></li>
   <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
 </ul>
+<% end %>
+<% if user_signed_in? and current_user.is_account_admin %>
 <ul id="people_dropdown" class="dropdown-content">
   <li><%= link_to 'Core Members', core_members_path %></li>
   <li class="divider"></li>
   <li><%= link_to "Edit Core Members", edit_multiple_core_members_path  %></li>
 </ul>
+<% end %>
 <nav>
   <div class="nav-wrapper">
     <%= link_to 'Datong', root_path, class: 'brand-logo' %>
