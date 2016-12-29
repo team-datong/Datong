@@ -1,4 +1,4 @@
-<h1>Upcoming Events</h1>
+<h3>Upcoming Events</h3>
 
 <!--display calendar-->
 <script>
@@ -29,5 +29,5 @@
 
 <%= render partial: "table", locals: {events: @upcoming_events}%>
 
-<h1>Past Events</h1>
+<h3>Past Events</h3>
 <%= render partial: "table", locals: {events: @old_events}%>
