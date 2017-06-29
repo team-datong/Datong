@@ -1,1 +1,0 @@
-Finished both [home](https://www.pivotaltracker.com/story/show/132293501) and [people](https://www.pivotaltracker.com/story/show/132293659) page migrations, but ended up adding quite a few chores to the list as we found out that there were a couple of things that were not straightforward and that needed to be done.
