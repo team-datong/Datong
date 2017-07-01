@@ -2,7 +2,7 @@
 
 Screencasts:
 * [Chit Siu](https://youtu.be/HefdNmRew6E)
-* [Haoran Yu](https://youtu.be/wbX1Yi_6zy8)
+* [Haoran Yu](https://youtu.be/HXRCeNWyU68)
 * [Chuyi Hou](https://youtu.be/qcZmanJXqR4)
 * [Nathan Su](https://youtu.be/0wauNbaX9Ek)
 * [Russell Shen](https://youtu.be/wbX1Yi_6zy8)
