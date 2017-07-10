@@ -34,17 +34,17 @@ end
 
 #
 
-Given /^(?:|I )am on the (.+) page$/ do |page_name|
-  visit path_to(page_name)
-end
+#Given /^(?:|I )am on the (.+) page$/ do |page_name|
+#  visit path_to(page_name)
+#end
 
-And /^(?:|I )am a (.+)$/ do |membership|
-  case membership
-    when 'visitor'
-      level.eql? 'visitor'
-    when 'general member'
-      level.eql? 'general member'
-    else
-      level.eql? 'core member'
-  end
-end
+#And /^(?:|I )am a (.+)$/ do |membership|
+#  case membership
+#    when 'visitor'
+#      level.eql? 'visitor'
+#    when 'general member'
+#      level.eql? 'general member'
+#    else
+#      level.eql? 'core member'
+#  end
+#end
