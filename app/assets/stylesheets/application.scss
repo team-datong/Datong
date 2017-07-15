@@ -42,15 +42,27 @@ nav {
     }
   }
   @media only screen and (min-width: $medium-screen) {
-    height: 64px;
+    height: 500px;
     .nav-wrapper {
       padding: 0em 1em 0 1em;
+      height: 64px;
+      position: fixed;
+      background-color: rgba(60,63,65,0.22);
     }
   }
 }
 
-.nav-wrapper .navbar-non-link {
+nav {
+  background-image: url("http://image.insider-journeys.com/overview/china.jpg");
+  background-size: cover;
+}
+
+.navbar-non-link {
   padding: 0 15px;
+}
+
+.nav-pages {
+  padding-left: 815px;
 }
 
 .side-nav {
