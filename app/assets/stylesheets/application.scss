@@ -48,12 +48,13 @@ nav {
       height: 64px;
       position: fixed;
       background-color: rgba(60,63,65,0.22);
+      width: 100%;
     }
   }
 }
 
 nav {
-  background-image: url("http://image.insider-journeys.com/overview/china.jpg");
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a2/PudongSkyline-pjt.jpg");
   background-size: cover;
 }
 
@@ -61,8 +62,14 @@ nav {
   padding: 0 15px;
 }
 
+.fixed{
+  position: absolute;
+  left: 0;
+}
+
 .nav-pages {
-  padding-left: 815px;
+  position: absolute;
+  right: 0;
 }
 
 .side-nav {
@@ -158,14 +165,17 @@ html{
 
 .column-left{
   float: left; width: 33%;
+  padding-bottom: 30px;
 }
 
 .column-right{
   float: right; width: 33%;
+  padding-bottom: 30px;
 }
 
 .column-center{
   display: inline-block; width: 33%;
+  padding-bottom: 30px;
 }
 
 #bottom-bar {
@@ -188,6 +198,12 @@ html{
 
 .container{
   margin-top: 10px;
+}
+
+.vertical-center{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .column-left{ float: left; width: 35%; padding-left: 10%;margin-left: 0px;}

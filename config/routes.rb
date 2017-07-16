@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/about_us'   => 'pages#about_us'
   get '/people'     => 'pages#people'
   get '/contact_us' => 'pages#contact_us'
+  #get '/resources'  => 'pages#resources'
   resources :resources, only: [:index, :new, :create, :destroy]
   resources :past_events
   resources :events

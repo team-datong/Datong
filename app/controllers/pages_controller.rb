@@ -19,4 +19,5 @@ class PagesController < ApplicationController
   def contact_us
     render 'pages/contact_us'
   end
+
 end

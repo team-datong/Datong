@@ -5,7 +5,7 @@ Feature: only allow core members to upload
 Scenario: core members can upload and download
   Given I am on the home page
   And I am a core member
-  When I follow “Resources”
+  When I follow Resources
   Then I should be on the Resources page
   And I should see “Upload”
   And i should see “Download”
@@ -13,7 +13,4 @@ Scenario: core members can upload and download
 Scenario: non-core-members cannot upload but can download
   Given I am on the home page
   And I am a registered member
-  When I follow “Resources”
-  Then I should be on the Resources page
-  And I should not see “Upload”
-  And i should see “Download”
+  And I should not see “Resources”
