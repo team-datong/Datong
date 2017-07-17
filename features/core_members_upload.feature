@@ -14,3 +14,37 @@ Scenario: non-core-members cannot upload but can download
   Given I am on the home page
   And I am a registered member
   And I should not see “Resources”
+
+
+Scenario: core member can see and navigate to Resources page with Upload and Download options
+  Given I am on the home page
+  And I am a core member
+  Then I should see Resources
+  When I follow Resources
+  Then I should be on the resources page
+  Then I should see Upload
+  And I should see Download
+
+Scenario: event admin can see and navigate to Resources page without Upload and with Download options
+  Given I am on the home page
+  And I am an event admin
+  Then I should see Resources
+  When I follow Resources
+  Then I should be on the resources page
+  Then I should not see Upload
+  And I should see Download
+
+Scenario: account admin can see and navigate to Resources page without Upload and with Download options
+  Given I am on the home page
+  And I am an account admin
+  Then I should see Resources
+  When I follow Resources
+  Then I should be on the resources page
+  Then I should not see Upload
+  And I should see Download
+
+Scenario: non logged in person cannot see Resources page tab
+  Given I am on the home page
+  And I am not logged in
+  And I am a visitor
+  Then I should not see Resources
