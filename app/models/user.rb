@@ -10,8 +10,4 @@ class User < ActiveRecord::Base
   def fullname
     return fname + ' ' + lname
   end
-  
-  def is_core_member
-    return core_member
-  end
 end
