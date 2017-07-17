@@ -15,6 +15,7 @@ class ResourcesController < ApplicationController
       @core_member = true
     end
     @resources = Resource.all
+    render 'pages/resources'
   end
 
   def new

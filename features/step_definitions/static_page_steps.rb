@@ -49,7 +49,7 @@ Given /^I am logged in$/ do
 end
 
 When /^(?:|I )follow (.*)$/ do |link|
-  click_link(link)
+    click_link(link)
 end
 
 And /^I should not see (.*)$/ do |text|
