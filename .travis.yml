@@ -4,6 +4,9 @@ rvm:
 notifications:
   slack:
     secure: ENV["slack_secure"]
+  email:
+    on_success: never
+    on_failure: never
 
 addons:
   code_climate:
