@@ -43,3 +43,8 @@ Scenario: account admin can see and navigate to Resources page without Upload an
   Then I should not see Upload
   And I should see Download
 
+Scenario: non logged in person cannot see Resources page tab
+  Given I am on the home page
+  And I am not logged in
+  And I am a visitor
+  Then I should not see Resources
