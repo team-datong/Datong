@@ -23,11 +23,7 @@ When /^(?:|I )have "(.*)" access$/ do |auth|
   pending
 end
 
-# When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |filename, field|
-  # pending
-# end
-
-Then /^I should see the image "(.+)"$/ do |image|
+Then /^I should be shown the image "(.+)"$/ do |image|
   # page.should have_xpath("//img[@src=\"/public/images/#{image}\"]")
   pending
 end
