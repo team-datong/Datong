@@ -25,26 +25,25 @@ Scenario: core member can see and navigate to Resources page with Upload and Dow
   Then I should see upload
   And I should see Download Link
 
-Scenario: event admin can see and navigate to Resources page without Upload and with Download options
+Scenario: event admin can see and navigate to Resources page with Upload and Download options
   Given I am on the home page
   And I am an event admin
   Then I should see Resources
   When I follow Resources
   Then I should be on the resources page
-  Then I should not see upload
+  Then I should see upload
   And I should see Download Link
 
-Scenario: account admin can see and navigate to Resources page without Upload and with Download options
+Scenario: account admin can see and navigate to Resources page with Upload and Download options
   Given I am on the home page
   And I am an account admin
   Then I should see Resources
   When I follow Resources
   Then I should be on the resources page
-  Then I should not see upload
+  Then I should see upload
   And I should see Download Link
 
 Scenario: non logged in person cannot see Resources page tab
   Given I am on the home page
-  And I am not logged in
   And I am a visitor
   Then I should not see Resources
