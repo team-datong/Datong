@@ -10,6 +10,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'bootstrap', '~> 4.0.0.alpha4'
 gem 'devise'
 gem 'dotenv-rails'
+gem 'tlsmail', '~> 0.0.1'
 group :development, :test do
   gem 'foreman'
 end
