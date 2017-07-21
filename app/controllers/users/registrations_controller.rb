@@ -5,7 +5,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
   
   def configure_sign_up_params
-    UserMailer.confirmation_instructions(params[:email]).deliver_now
     devise_parameter_sanitizer.permit(:sign_up, keys: [:fname, :lname, :email, :password])
   end
 

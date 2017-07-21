@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {
       sessions: 'users/sessions',
-      registrations: 'users/registrations'
+      registrations: 'users/registrations',
+      confirmations: "devise/confirmations"
   }
   get 'core_members/index'
 
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
   get '/people'     => 'pages#people'
   get '/contact_us' => 'pages#contact_us'
   #get '/resources'  => 'pages#resources'
-  get '/user/:fname/confirmation', to: 'users/registrations#confirm', as: 'confirmation'
+  #get '/confirmation', to: 'users/registrations#confirm', as: 'confirmation'
   resources :resources, only: [:index, :new, :create, :destroy]
   resources :past_events
   resources :events
