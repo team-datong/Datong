@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/people'     => 'pages#people'
   get '/contact_us' => 'pages#contact_us'
   #get '/resources'  => 'pages#resources'
+  get '/user/:fname/confirmation', to: 'users/registrations#confirm', as: 'confirmation'
   resources :resources, only: [:index, :new, :create, :destroy]
   resources :past_events
   resources :events
