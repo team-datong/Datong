@@ -31,10 +31,13 @@ module NavigationHelpers
       '/users/sign_up'
     when /^the Core Members page$/
       '/core_members/index'
-      when /^the Edit Core Members page$/
+    when /^the Edit Core Members page$/
       '/core_members/edit_multiple'
     when /^the new events page$/
       '/events/new'
+    when /^the update profile page$/
+      pending
+
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
