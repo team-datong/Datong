@@ -17,7 +17,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
   #
-  config.action_mailer.default_url_options = { :host => 'https://datong2017sum.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
   config.action_mailer.delivery_method = :smtp
 
