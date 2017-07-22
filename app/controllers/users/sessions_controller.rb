@@ -3,7 +3,6 @@ class Users::SessionsController < Devise::SessionsController
 
   protected
 
-  attr_accessor :logged_in
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_in_params

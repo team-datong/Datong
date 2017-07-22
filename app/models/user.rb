@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
   def fullname
     return fname + ' ' + lname
   end
+
+
 end

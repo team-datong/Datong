@@ -14,6 +14,7 @@ class ResourcesController < ApplicationController
     if !current_user.nil? and current_user.is_core_member
       @core_member = true
     end
+    #debugger
     @resources = Resource.all
     render "index"
   end
