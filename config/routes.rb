@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       registrations: 'users/registrations',
       confirmations: "devise/confirmations"
   }
+
   get 'core_members/index'
 
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
@@ -26,7 +27,7 @@ Rails.application.routes.draw do
       put 'update_multiple'
     end
   end
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

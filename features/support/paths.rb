@@ -35,8 +35,8 @@ module NavigationHelpers
       '/core_members/edit_multiple'
     when /^the new events page$/
       '/events/new'
-    when /^the update profile page$/
-      pending
+    when /^the edit profile page$/
+      '/users/edit'
 
 
     # Add more mappings here.

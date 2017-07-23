@@ -42,7 +42,7 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
-  <div class="field">
+  <div class="field", id="natesu">
     <%= f.label :img_url %><br />
     <%= f.text_field :img_url, required: false %>
   </div>
@@ -53,7 +53,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Update", class: "btn waves-effect waves-light" %>
+    <%= link_to "Update", edit_user_registration_path, class: "btn waves-effect waves-light" %>
   </div>
 <% end %>
 
