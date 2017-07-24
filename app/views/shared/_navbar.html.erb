@@ -16,7 +16,7 @@
             <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
             <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
             <li><div class="navbar-non-link">Hello <strong><%=current_user.fname%></strong></div></li>
-            <% if @core_member==true %><image src=<%=current_user.img_url%> width="60", height="60"></image><% end %>
+            <image src=<%=current_user.img_url%> width="60", height="60"></image>
         <% else %>
             <li><%= link_to "Sign Up", new_user_registration_path %></li>
             <li><%= link_to "Sign In", new_user_session_path %></li>
