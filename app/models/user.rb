@@ -6,8 +6,10 @@ class User < ActiveRecord::Base
 
   validates :fname, presence: true
   validates :lname, presence: true
-
+  
   def fullname
     return fname + ' ' + lname
   end
+
+
 end

@@ -19,7 +19,7 @@ Feature: When I visit the resources page as a core member, I would like to updat
       Given The "Resource1" file exists
       And I am on the resources page
       And I am a core member
-      When I press "Delete"
+      When I press "Delete" 
       Then I should see The resource Resource1 has been deleted.
       And I should see There are no resources uploaded currently
     

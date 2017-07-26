@@ -17,7 +17,6 @@ Then /^I should see (.*)$/ do |text|
       expect(page).to have_selector('nav')
     else
       expect(page).to have_content(text)
-
   end
 end
 
@@ -31,7 +30,7 @@ Given /^I do not have an account$/ do
 end
 
 Given /^I am not logged in$/ do
-  pending
+
 end
 
 Given /^I am logged in$/ do
@@ -49,7 +48,7 @@ Given /^I am logged in$/ do
 end
 
 When /^(?:|I )follow (.*)$/ do |link|
-  click_link(link)
+    click_link(link)
 end
 
 And /^I should not see (.*)$/ do |text|

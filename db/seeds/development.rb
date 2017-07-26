@@ -1,5 +1,6 @@
-User.destroy_all
-User.create!([{email:'user1@datong.com', password: 'passwordpassword', fname: 'User', lname: 'Juan', is_account_admin:
-    true, confirmed_at: DateTime.now}, {email:'user2@datong.com', password:'password', fname: 'User', lname: 'Tu'}])
-
-p "Created #{User.count} users"
+User.create!(:email => "csiuab@berkeley.edu", :password => "csiuab", :fname => "Jay", :lname => "Siu", :is_core_member => true)
+#nathan = User.create!(:email => "nathan.su@berkeley.edu", :password => "password", :fname => "Nathan", :lname => "Su")
+#jay.skip_confirmation!
+#jay.save!
+#nathan.skip_confirmation!
+#nathan.save!

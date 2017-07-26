@@ -20,6 +20,10 @@ And /^The "(.*)" file exists$/ do |filename|
 end
 
 When /^(?:|I )have "(.*)" access$/ do |auth|
-    pending
+  pending
 end
 
+Then /^I should be shown the image "(.+)"$/ do |image|
+  # page.should have_xpath("//img[@src=\"/public/images/#{image}\"]")
+  pending
+end

@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
+  #devise_for :admins
   devise_for :users, controllers: {
       sessions: 'users/sessions',
-      registrations: 'users/registrations'
+      registrations: 'users/registrations',
+      confirmations: "devise/confirmations"
   }
+
   get 'core_members/index'
 
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
@@ -12,6 +15,8 @@ Rails.application.routes.draw do
   get '/about_us'   => 'pages#about_us'
   get '/people'     => 'pages#people'
   get '/contact_us' => 'pages#contact_us'
+  #get '/resources'  => 'pages#resources'
+  #get '/confirmation', to: 'users/registrations#confirm', as: 'confirmation'
   resources :resources, only: [:index, :new, :create, :destroy]
   resources :past_events
   resources :events
@@ -22,7 +27,7 @@ Rails.application.routes.draw do
       put 'update_multiple'
     end
   end
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

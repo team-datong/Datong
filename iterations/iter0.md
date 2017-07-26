@@ -1,9 +1,10 @@
-Entry Video: https://www.youtube.com/watch?v=g1i02_DPf-0
+[Entry Video](https://youtu.be/s9Hap0N5CfM)
+
 
 Screencasts:
-* [Elizabeth Steger](https://www.youtube.com/watch?v=xFsJSaUtoPg&feature=youtu.be)
-* [Jeremy Park](https://youtu.be/dgfJMmZes8k)
-* [Susanna Souv](https://youtu.be/jhzhTmb_z0s)
-* [Kara Gieseking](https://youtu.be/KDykVB97OWs)
-* [Aditi Ganpule](https://youtu.be/yvjVZ8WiZJ8)
-* [Yitz Deng](https://youtu.be/N9knHcCz7R4)
+* [Chit Siu](https://youtu.be/HefdNmRew6E)
+* [Haoran Yu](https://youtu.be/HXRCeNWyU68)
+* [Chuyi Hou](https://youtu.be/qcZmanJXqR4)
+* [Nathan Su](https://youtu.be/0wauNbaX9Ek)
+* [Russell Shen](https://youtu.be/wbX1Yi_6zy8)
+* [Susan Le](https://youtu.be/Utok8ZrjgYE)

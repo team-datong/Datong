@@ -4,6 +4,13 @@ rvm:
 notifications:
   slack:
     secure: ENV["slack_secure"]
+  email:
+    on_success: never
+    on_failure: never
+
+addons:
+  code_climate:
+      repo_token: f76e309ab924139bae186cf23faa24619003d04c4e1ed258403a426a5391add5
 
 script:
  - RAILS_ENV=test bundle exec rake db:migrate --trace
@@ -14,6 +21,3 @@ script:
 after_script:
  - bundle exec rake send_to_codeclimate
 
-addons:
-    code_climate:
-        repo_token: 257ebcdc193edab27b70c5f78f9c324226e1abf02ecda19198c079b3ba82f0f6

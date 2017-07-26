@@ -1,57 +1,19 @@
 # README
-[![BuildStatus](https://travis-ci.org/team-datong/Datong.svg?branch=master)](https://travis-ci.org/team-datong/Datong)
-[![CodeClimate](https://codeclimate.com/github/team-datong/Datong/badges/gpa.svg)](https://codeclimate.com/github/team-datong/Datong)
-[![Test Coverage](https://codeclimate.com/github/team-datong/Datong/badges/coverage.svg)](https://codeclimate.com/github/team-datong/Datong/coverage)
-
+[![CodeClimate](https://codeclimate.com/github/JaySiu/Datong/badges/gpa.svg)](https://codeclimate.com/github/JaySiu/Datong)
+[![Test Coverage](https://codeclimate.com/github/JaySiu/Datong/badges/coverage.svg)](https://codeclimate.com/github/JaySiu/Datong/coverage)
+[![Build Status](https://travis-ci.org/JaySiu/Datong.svg?branch=master)](https://travis-ci.org/JaySiu/Datong)
 
 Links:
 
-* [Heroku App](https://datong.herokuapp.com)
+* [Heroku App](https://datong2017sum.herokuapp.com/)
 
-* [Pivotal Tracker Project](https://www.pivotaltracker.com/n/projects/1879399)
+* [Pivotal Tracker Project](https://www.pivotaltracker.com/projects/2068521)
 
 
 PROJECT DESCRIPTION:
 
-The Da-tong Society of China Studies is a cultural and academic organization. They want to add functionalities to their current website to make it more useful to their members.
-They are looking for us to build a website for Datong that include functionalities like a member login system, course rating system, resource uploading and downloading, and integration of Google Calendar.
+The Da-tong Society of China Studies at Berkeley is a cultural and academic organization. They want to add functionalities to their current website to make it more useful to their members.
+The Society aims to provide a communication and research platform for students who are interested in both historical and social issues of China and East Asia.
+A well-built website will help our members integrate resources, outreach to the campus student body who is interested in participating in China Studies centered events(seminars, film nights, and reading sessions), and ultimately help them have a better understanding of culture, politics, and history of China.
 
-* [Current Client Website](https://datong.berkeley.edu/)
-
-* [Mockups](http://imgur.com/a/d3HBG)
-
-RULES OF ENGAGEMENT:
-
-1. Create a must-have list to prioritize stories for the iteration
-
-   Start w/ creating list of clarifying questions for the client
-
-2. Track all progress in pivotal tracker
-
-3. Master branch is final work/release:
-
-   Never commit straight to master
-   
-   Always create a PR, merge once you get 2 approvals (and then delete branch on GitHub & locally)
-   
-   Need thumbs up from Travis CI (before receiving code review)
-   
-4. Unit of a commit = a lot of tiny changes, doesn’t really matter
-
-5. Create a branch for each feature
-
-6. Make a PR when completed
-
-   Get thumbs up from Travis CI, 2 approvals, merge
-   
-   Otherwise, address CR comments, and iterate ^
-   
-   Generally, close if need to iterate and branch includes sensitive info (API keys, etc.)
-   
-7. Create a branch from Iter#Staging, name it depending on:
-
-   Bug → Fix<bug name>
-   
-   Feature → Add<feature name>
-   
-   Test → Create<feature/bug name>Test
+[Current Website](http://datong-berkeley-edu.apphost.ocf.berkeley.edu/)
